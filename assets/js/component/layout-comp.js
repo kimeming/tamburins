@@ -3,45 +3,45 @@ import linkSetData from "/assets/data/gnb-data.js";
 // SearchWrap 컴포넌트
 export const SearchWrap = {
   template: `
-        <div class="search-wrap">
-                <div class="search-top">
-                    <button type="button" class="search-close-btn">
-                        <span class="blind">검색창 닫힘</span>
-                    </button>
-                </div>
-                <div class="search-form">
-                    <form id="searchFrm" name="searchFrm">
-                        <fieldset>
-                            <legend class="blind">검색창</legend>
-                            <div class="form-inner">
-                                <div class="search-box">
-                                    <input type="text" id="searchForm" name="query" placeholder="어떤 상품을 찾으시나요?" title="검색어" tabindex="0">
-                                    <button type="button" class="erase-btn"><span class="blind">검색결과 지우기</span></button>
-                                    <button type="button" class="search-btn"><span class="blind">검색</span></button>
-                                </div>
-                                <div class="search-content recommend active">
-                                    <em class="box-tit">제안</em>
-                                    <ul class="recommend-list">
-                                        <li>퍼퓸 이브닝글로우 11mL</li>
-                                        <li>퍼퓸 이브닝글로우 50mL</li>
-                                        <li>퍼퓸 밤 이브닝글로우</li>
-                                        <li>쉘 퍼퓸 핸드 이브닝글로우</li>
-                                    </ul>
-                                </div>
-                                <div class="search-content result">
-                                    <em class="box-tit">검색 결과</em>
-                                    <ul class="result-list">
-                                        <li>검색 결과가 없습니다.</li>
-                                    </ul>
-                                    <div class="btn-wrap">
-                                        <button type="button" class="more-btn">검색결과 더보기</button>
-                                    </div>
+    <div class="search-wrap">
+            <div class="search-top">
+                <button type="button" class="search-close-btn">
+                    <span class="blind">검색창 닫힘</span>
+                </button>
+            </div>
+            <div class="search-form">
+                <form id="searchFrm" name="searchFrm">
+                    <fieldset>
+                        <legend class="blind">검색창</legend>
+                        <div class="form-inner">
+                            <div class="search-box">
+                                <input type="text" id="searchForm" name="query" placeholder="어떤 상품을 찾으시나요?" title="검색어" tabindex="0">
+                                <button type="button" class="erase-btn"><span class="blind">검색결과 지우기</span></button>
+                                <button type="button" class="search-btn"><span class="blind">검색</span></button>
+                            </div>
+                            <div class="search-content recommend active">
+                                <em class="box-tit">제안</em>
+                                <ul class="recommend-list">
+                                    <li>퍼퓸 이브닝글로우 11mL</li>
+                                    <li>퍼퓸 이브닝글로우 50mL</li>
+                                    <li>퍼퓸 밤 이브닝글로우</li>
+                                    <li>쉘 퍼퓸 핸드 이브닝글로우</li>
+                                </ul>
+                            </div>
+                            <div class="search-content result">
+                                <em class="box-tit">검색 결과</em>
+                                <ul class="result-list">
+                                    <li>검색 결과가 없습니다.</li>
+                                </ul>
+                                <div class="btn-wrap">
+                                    <button type="button" class="more-btn">검색결과 더보기</button>
                                 </div>
                             </div>
-                        </fieldset>
-                    </form>
-                </div>
-            </div>
+                        </div>
+                    </fieldset>
+                </form>
+          </div>
+      </div>
     `,
 };
 
@@ -62,7 +62,7 @@ export const GNB = {
                       <router-link class="dep1" :to="item.link.path">{{ key }}</router-link>
                       <ul v-if="item.menu && Object.keys(item.menu).length" class="dep2">
                         <li v-for="(subItem, subKey) in item.menu" :key="subKey">
-                          <router-link :to="'/' + subItem.name + '?item=' + subItem.params.cls">
+                          <router-link :to="item.link.path">
                             <p class="dep2-tit">{{ subKey }}</p>
                           </router-link>
                         </li>

@@ -89,12 +89,14 @@ export const Main = {
                     <ul class="new-product-list swiper-wrapper">
                         <li v-for="(slide, index) in newProduct" :key="index" class="swiper-slide":class="'item' + (index + 1)">
                             <div class="inner">
-                                <h3 class="section-tit">{{ slide.title }}</h3>
-                                <div class="intro-box">
-                                    <span>{{ slide.intro }}</span>
-                                    <p v-html="slide.description"></p>
+                                <div class="text-box">
+                                    <h3 class="section-tit">{{ slide.title }}</h3>
+                                    <div class="intro-box">
+                                        <span>{{ slide.intro }}</span>
+                                        <p v-html="slide.description"></p>
+                                    </div>
+                                    <a :href="slide.link" class="link-btn">Go To Shop <span class="icon star"></span></a>
                                 </div>
-                                <a :href="slide.link" class="link-btn">Go To Shop <span class="icon star"></span></a>
                             </div>
                         </li>
                     </ul>

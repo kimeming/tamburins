@@ -1,6 +1,6 @@
 import { Header, Footer } from './component/layout-comp.js';
 import { Main } from './component/main-comp.js';
-import router from './router.js';
+import { router } from './router.js';
 
 new Vue({
   el: '#app',

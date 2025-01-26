@@ -27,34 +27,16 @@ export const subTop = {
       },
 }
 
-export const SubType1 = {
+export const SubLayout = {
+    props: ["showSubTop"],
     template: `
-        <!-- sub-container s -->
         <div class="sub-container" id="main">
-            <!-- sub-top s -->
-            <sub-top-comp></sub-top-comp>
-            <!-- sub-top e -->
-            <!-- contents s -->
+            <sub-top-comp v-if="showSubTop"></sub-top-comp>
             <router-view></router-view>
-            <!-- contents e -->
         </div>
-        <!-- sub-container e -->
+        
     `,
     components: {
-        "sub-top-comp": subTop,
+      "sub-top-comp": subTop, // 상단 컴포넌트
     },
-}
-
-export const SubType2 = {
-    template: `
-        <!-- sub-container s -->
-        <div class="sub-container" id="main">
-            <!-- contents s -->
-            <div class="contents type2">
-                <router-view></router-view>
-            </div>
-            <!-- contents e -->
-        </div>
-        <!-- sub-container e -->
-    `,
-}
+};

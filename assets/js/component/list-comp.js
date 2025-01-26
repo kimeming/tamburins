@@ -1,15 +1,7 @@
-// 제품 디테일페이지 컴포넌트 JS - product_view_comp
-
-import { subTop } from "./sub-comp.js";
-
-export const List = {
+// 제품 디테일페이지 컴포넌트 JS - list-comp.js
+export const ProductList = {
   template: `
-<!-- sub-container s -->
-  <!-- contents s -->
-  <div class="sub-container" id="main">
-    <!-- sub-top s -->
-    <sub-top-comp></sub-top-comp>
-    <!-- sub-top e -->
+    <!-- contents s -->
     <div class="contents">
       <div class="product-list-area">
         <ul class="product-list-wrap">
@@ -31,14 +23,9 @@ export const List = {
         </ul>
       </div>
     </div>
-  </div>
-  <!-- contents e -->
-<!-- sub-container e -->
+    <!-- contents e -->
     `,
   data() {
     return {};
-  },
-  components: {
-    "sub-top-comp": subTop,
   },
 };

@@ -46,7 +46,6 @@
 
 /* section - new */
 .new-product-list>li {min-height: 833px; background-image: url('/assets/img/main/bg-new-temp.png'); background-position: top; background-size: cover; background-repeat: no-repeat;}
-.new-product-list .inner {max-width: 800px; margin: 0;}
 .new-slide .section-tit {font-size: 56px;}
 .new-slide .intro-box p {margin-top: 1rem;}
 .new-slide .link-btn {background-color: rgba(255, 255, 255, 0.2); border: none; margin-top: 30px;}
@@ -56,6 +55,7 @@
     .new-product-list>li {background-image: url('/assets/img/main/pc_main_banner.png');}
     .new-product-wrap {width: 50%;}
     .new-product-wrap .intro-box {font-size: 1.2rem;}
+    .new-slide .text-box {max-width: 50%;}
 }
 
 /* 신상품 섹션 배경 이미지 */
