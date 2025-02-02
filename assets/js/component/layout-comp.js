@@ -62,7 +62,9 @@ export const GNB = {
                       <router-link class="dep1" :to="item.link.path">{{ key }}</router-link>
                       <ul v-if="item.menu && Object.keys(item.menu).length" class="dep2">
                         <li v-for="(subItem, subKey) in item.menu" :key="subKey">
-                          <router-link :to="item.link.path">
+                          <!-- 서브카테고리 링크 -->
+                          <router-link 
+                            :to="'/' + subItem.name + '/' + subItem.params.cls">
                             <p class="dep2-tit">{{ subKey }}</p>
                           </router-link>
                         </li>
@@ -84,6 +86,7 @@ export const GNB = {
       </div>
     `,
 };
+
 
 // Header 컴포넌트
 export const Header = {
