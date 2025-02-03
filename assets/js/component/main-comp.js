@@ -89,14 +89,12 @@ export const Main = {
                     <ul class="new-product-list swiper-wrapper">
                         <li v-for="(slide, index) in newProduct" :key="index" class="swiper-slide":class="'item' + (index + 1)">
                             <div class="inner">
-                                <div class="text-box">
-                                    <h3 class="section-tit">{{ slide.title }}</h3>
-                                    <div class="intro-box">
-                                        <span>{{ slide.intro }}</span>
-                                        <p v-html="slide.description"></p>
-                                    </div>
-                                    <a :href="slide.link" class="link-btn">Go To Shop <span class="icon star"></span></a>
+                                <h3 class="section-tit">{{ slide.title }}</h3>
+                                <div class="intro-box">
+                                    <span>{{ slide.intro }}</span>
+                                    <p v-html="slide.description"></p>
                                 </div>
+                                <a :href="slide.link" class="link-btn">Go To Shop <span class="icon star"></span></a>
                             </div>
                         </li>
                     </ul>
@@ -114,19 +112,19 @@ export const Main = {
                             <div class="store-slide swiper">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
-                                        <img src="/assets/img/store/img-store-hannam01.jpg" alt="플래그십 스토어 한남">
+                                        <img src="/assets/img/store/img_store_hannam_01.jpg" alt="플래그십 스토어 한남">
                                     </div>
                                     <div class="swiper-slide">
-                                        <img src="/assets/img/store/img-store-sungsu01.jpg" alt="플래그십 스토어 성수">
+                                        <img src="/assets/img/store/img_store_seongsu_01.jpg" alt="플래그십 스토어 성수">
                                     </div>
                                     <div class="swiper-slide">
-                                        <img src="/assets/img/store/img-store-samchung01.jpg" alt="플래그십 스토어 삼청">
+                                        <img src="/assets/img/store/img_store_samcheong_01.jpg" alt="플래그십 스토어 삼청">
                                     </div>
                                     <div class="swiper-slide">
-                                        <img src="/assets/img/store/img-store-dosan01.jpg" alt="하우스 도산">
+                                        <img src="/assets/img/store/img_store_dosan_02.jpg" alt="하우스 도산">
                                     </div>
                                     <div class="swiper-slide">
-                                        <img src="/assets/img/store/img-store-sinsa01.jpg" alt="플래그십 스토어 신사">
+                                        <img src="/assets/img/store/img_store_sinsa_01.jpg" alt="플래그십 스토어 신사">
                                     </div>
                                 </div>
                                 <div class="swiper-scrollbar"></div>

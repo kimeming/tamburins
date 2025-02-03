@@ -45,6 +45,7 @@ $(() => {
   $dep2A.on('click', function () {
     if(!$(this).hasClass('on')){
       $(this).addClass('on').parent().siblings().children().removeClass('on');
+      gnbClose();
     } else {
         $(this).removeClass('on');
     }
