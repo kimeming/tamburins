@@ -5,9 +5,11 @@
 .sub-top {position: fixed; top: var(--header-height);  width: 100%; background-color: #fff; z-index: 15;}
 .sub-top .inner {width: 100%; max-width: 1600px; display: flex; flex-direction: column; margin: 0 auto;}
 .sub-title {font-weight: bold; font-size: 16px; padding: 10px 15px; border-bottom: 1px solid var(--border-color); text-transform: uppercase;}
-.category-tab {padding: 10px 15px; display: flex; gap: 10px; overflow-x: auto;}
+.category-tab {padding: 10px 15px; display: flex; gap: 10px; overflow-x: auto; display: none;}
 .category-tab>li {height: 30px; padding: 0 20px; line-height: 30px; background: #EFEFEF; color: #777; border-radius: 20px; font-size: 13px;}
-.category-tab>li.on {color: #fff; background: #000;}
+.category-tab>li.on {color: #fff; background: #000; }
+.category-tab:has(li.on) {display: flex; }
+
 
 .contents {margin-top: calc(var(--header-height) + 95px);}
 .contents.type2 {margin-top: var(--header-height);}
