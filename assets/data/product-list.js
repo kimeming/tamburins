@@ -543,7 +543,7 @@ const productList = [
   {
     idx: 45,
     categot: "BODY",
-    subCat: "샤워리바디",
+    subCat: "샤워리 바디",
     pImage: "/assets/img/showery_body/img_showery_body_01.jpg",
     pTitle: "샤워리바디워시 얼리모닝듀",
     pNote: "애플민트ㅣ신선한 월계수ㅣ이른 아침의 청량함",
@@ -553,7 +553,7 @@ const productList = [
   {
     idx: 46,
     categot: "BODY",
-    subCat: "샤워리바디",
+    subCat: "샤워리 바디",
     pImage: "/assets/img/showery_body/img_showery_body_02.jpg",
     pTitle: "샤워리바디워시 비가리코",
     pNote: "씁쓸한 오렌지 | 시더우드 | 달콤한 리코라이스",
@@ -563,7 +563,7 @@ const productList = [
   {
     idx: 47,
     categot: "BODY",
-    subCat: "샤워리바디",
+    subCat: "샤워리 바디",
     pImage: "/assets/img/showery_body/img_showery_body_03.jpg",
     pTitle: "샤워리바디워시 님버스",
     pNote: "도넛피치 | 어린 코코넛의 풋내음 | 포근한 머스크",
@@ -573,7 +573,7 @@ const productList = [
   {
     idx: 48,
     categot: "BODY",
-    subCat: "샤워리바디",
+    subCat: "샤워리 바디",
     pImage: "/assets/img/showery_body/img_showery_body_04.jpg",
     pTitle: "샤워리바디 듀오 얼리모닝듀",
     pNote: "애플민트ㅣ신선한 월계수ㅣ이른 아침의 청량함",
@@ -583,7 +583,7 @@ const productList = [
   {
     idx: 49,
     categot: "BODY",
-    subCat: "샤워리바디",
+    subCat: "샤워리 바디",
     pImage: "/assets/img/showery_body/img_showery_body_05.jpg",
     pTitle: "샤워리바디 듀오 비가리코",
     pNote: "씁쓸한 오렌지 | 시더우드 | 달콤한 리코라이스",
@@ -593,7 +593,7 @@ const productList = [
   {
     idx: 50,
     categot: "BODY",
-    subCat: "샤워리바디",
+    subCat: "샤워리 바디",
     pImage: "/assets/img/showery_body/img_showery_body_06.jpg",
     pTitle: "샤워리바디 듀오 님버스",
     pNote: "도넛피치 | 어린 코코넛의 풋내음 | 포근한 머스크",
@@ -603,7 +603,7 @@ const productList = [
   {
     idx: 51,
     categot: "BODY",
-    subCat: "샤워리바디",
+    subCat: "샤워리 바디",
     pImage: "/assets/img/showery_body/img_showery_body_07.jpg",
     pTitle: "샤워리바디로션 얼리모닝듀",
     pNote: "애플민트ㅣ신선한 월계수ㅣ이른 아침의 청량함",
@@ -613,7 +613,7 @@ const productList = [
   {
     idx: 52,
     categot: "BODY",
-    subCat: "샤워리바디",
+    subCat: "샤워리 바디",
     pImage: "/assets/img/showery_body/img_showery_body_08.jpg",
     pTitle: "샤워리바디로션 비가리코",
     pNote: "씁쓸한 오렌지 | 시더우드 | 달콤한 리코라이스",
@@ -623,7 +623,7 @@ const productList = [
   {
     idx: 53,
     categot: "BODY",
-    subCat: "샤워리바디",
+    subCat: "샤워리 바디",
     pImage: "/assets/img/showery_body/img_showery_body_09.jpg",
     pTitle: "샤워리바디로션 포그",
     pNote: "물안개 낀 숲 | 젖은 나무 | 캐시미어 우드",

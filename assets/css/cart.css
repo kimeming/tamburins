@@ -12,7 +12,7 @@ input {appearance: none; background: none; border: none;}
 .cart-wrap {display: flex; flex-direction: column; gap: 20px; position: relative;}
 
 .product-head {display: flex; justify-content: space-between; align-items: center; padding: 12px;}
-.product-head .checkbox {height: 16px;}
+.product-head .checkbox {height: 16px; display: flex; align-items: center; gap: 7px;}
 .cart-list>li {border-top: 1px solid var(--border-color)}
 .cart-list .item {display: flex; justify-content: space-between; gap: 10px; padding: 10px 10px 10px 12px;}
 .item-info-wrap {display: flex; flex-direction: column; gap: 10px;}

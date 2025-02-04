@@ -1,5 +1,6 @@
 // layout.js
 import linkSetData from "/assets/data/gnb-data.js";
+import store from "../vuex_store_store.js";
 // SearchWrap 컴포넌트
 export const SearchWrap = {
   template: `
@@ -22,8 +23,8 @@ export const SearchWrap = {
                             <div class="search-content recommend active">
                                 <em class="box-tit">제안</em>
                                 <ul class="recommend-list">
-                                    <li>퍼퓸 이브닝글로우 11mL</li>
-                                    <li>퍼퓸 이브닝글로우 50mL</li>
+                                    <li>퍼퓸 이브닝글로우</li>
+                                    <li>체인 핸드 000</li>
                                     <li>퍼퓸 밤 이브닝글로우</li>
                                     <li>쉘 퍼퓸 핸드 이브닝글로우</li>
                                 </ul>
@@ -52,16 +53,22 @@ export const GNB = {
       linkSetData,
     };
   },
+  methods:{
+    catData1(subKey){
+      console.log('key',subKey);
+      store.commit("setListData", subKey);
+    }
+  },
   template: `
       <div class="gnb-wrap">
           <div class="gnb-inner">
               <!-- gnb s -->
               <nav class="gnb">
                   <ul class="gnb-list">
-                    <li v-for="(item, key) in linkSetData" :key="key">
-                      <router-link class="dep1" :to="item.link.path">{{ key }}</router-link>
+                    <li v-for="(item, key) in linkSetData" :key="key" >
+                      <router-link class="dep1" :to="item.link.path" >{{ key }}</router-link>
                       <ul v-if="item.menu && Object.keys(item.menu).length" class="dep2">
-                        <li v-for="(subItem, subKey) in item.menu" :key="subKey">
+                        <li v-for="(subItem, subKey) in item.menu" :key="subKey" @click="catData1(subKey)">
                           <!-- 서브카테고리 링크 -->
                           <router-link 
                             :to="'/' + subItem.name + '/' + subItem.params.cls">
@@ -85,6 +92,7 @@ export const GNB = {
           </div>
       </div>
     `,
+    
 };
 
 
@@ -98,7 +106,7 @@ export const Header = {
           <button type="button" class="search-open-btn"><span class="blind">검색 버튼</span></button>
         </div>
         <h1 class="logo">
-          <a href="#"><img src="/ASSETS/img/main/logo_red.svg" alt="TAMBURINS"></a>
+          <a href="/"><img src="/ASSETS/img/main/logo_red.svg" alt="TAMBURINS"></a>
         </h1>
         <gnb-comp></gnb-comp>
         <div class="util">

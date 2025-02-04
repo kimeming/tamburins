@@ -13,12 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 추천 검색어
     const searchForm = document.getElementById('searchForm');
+    const result = document.querySelector('.result');
+    const recommend = document.querySelector('.recommend');
+    const searchContent = document.querySelector('.search-content');
+    const eraseBtn = document.querySelector('.erase-btn');
+
     searchForm.addEventListener('input', () => {
-        const result = document.querySelector('.result');
-        const recommend = document.querySelector('.recommend');
-        const searchContent = document.querySelector('.search-content');
-        const eraseBtn = document.querySelector('.erase-btn');
-        
+
         eraseBtn.classList.add('on');
 
         if (searchForm.value.trim() !== '') {
@@ -33,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             recommend.classList.add('active');
         }
 
+        curIdx = 5; // 검색어가 변경될 때 더보기 인덱스 초기화
         performSearch();
     });
 
@@ -58,15 +60,25 @@ document.addEventListener('DOMContentLoaded', () => {
             if (filteredProducts.length === 0) {
                 resultList.innerHTML = '<li>검색 결과가 없습니다.</li>';
             } else {
+                // 특수문자 이스케이프 처리
+                const escapedQuery = searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
                 filteredProducts.slice(0, 5).forEach(product => {
                     const li = document.createElement('li');
                     li.classList.add('item');
+
+                    // 검색어 부분을 <strong> 태그로 감싸기
+                    const highlightedTitle = product.pTitle.replace(
+                        new RegExp(`(${escapedQuery})`, 'gi'), 
+                        `<strong>$1</strong>`
+                    );
+
                     li.innerHTML = `
                         <a href="#">
                             <div class="img-box">
                                 <img src="${product.pImage}" alt="이미지">
                             </div>
-                            <p class="item-name">${product.pTitle}</p>
+                            <p class="item-name">${highlightedTitle}</p>
                         </a>
                     `;
                     resultList.appendChild(li);
@@ -78,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.querySelector('.more-btn').style.display = 'block';
     }
-
+    
     // 검색결과 더보기
     let curIdx = 5;
     function loadMoreResults() {
@@ -86,21 +98,36 @@ document.addEventListener('DOMContentLoaded', () => {
         const resultList = document.querySelector('.result-list');
         const products = Object.values(productList).flat();
 
+        if (!searchQuery) return; // 검색어 없으면 실행 X
+
         const filteredProducts = products.filter(product =>
             product.pTitle.toLowerCase().includes(searchQuery)
         );
+
+        if (curIdx >= filteredProducts.length) {
+            document.querySelector('.more-btn').style.display = 'none';
+            return;
+        }
 
         const moreResults = filteredProducts.slice(curIdx, curIdx + 5);
 
         moreResults.forEach(product => {
             const li = document.createElement('li');
             li.classList.add('item');
+
+            // 검색어 부분을 <strong> 태그로 감싸기
+            const escapedQuery = searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const highlightedTitle = product.pTitle.replace(
+                new RegExp(`(${escapedQuery})`, 'gi'),
+                `<strong>$1</strong>`
+            );
+
             li.innerHTML = `
                 <a href="#">
                     <div class="img-box">
                         <img src="${product.pImage}" alt="이미지">
                     </div>
-                    <p class="item-name">${product.pTitle}</p>
+                    <p class="item-name">${highlightedTitle}</p>
                 </a>
             `;
             resultList.appendChild(li);
@@ -119,6 +146,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const resultList = document.querySelector('.result-list');
         resultList.innerHTML = '<li>검색 결과가 없습니다.</li>';
         document.querySelector('.more-btn').style.display = 'none';
+        curIdx = 5; // 검색 초기화 시 더보기 인덱스 리셋
+        // 추천 검색어 다시 보이도록 설정
+        recommend.classList.add('active');  
+        result.classList.remove('active');  
     }
 
     // 이벤트
@@ -126,4 +157,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.erase-btn').addEventListener('click', clearSearch);
     document.querySelector('.more-btn').addEventListener('click', loadMoreResults);
     document.querySelector('.search-close-btn').addEventListener('click', clearSearch);
+});
+
+document.querySelectorAll('.recommend-list>li').forEach(item => {
+    item.addEventListener('click', event => {
+        const clickedText = event.target.textContent.trim();
+        searchForm.value = clickedText;
+        
+        // 강제로 input 이벤트 발생시키기
+        searchForm.dispatchEvent(new Event('input', { bubbles: true }));
+    });
 });

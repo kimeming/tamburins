@@ -25,10 +25,15 @@ export default new Vuex.Store({
   },
   // (2) 데이터 변경 구역 : mutations
   mutations: {
-    setListData(s, subCategory) {
-      s.catList = s.productList.filter(v => v.subCat === subCategory);
+    setListData(s, subKey) {
+      s.catList = s.productList.filter(v => v.subCat === subKey);
       console.log("필터링된 카테고리 리스트:", s.catList);
-    }
+    },
+    setViewData(s, pm) {
+      s.productView = s.productList.find(v=>v.idx == pm);
+      console.log("선택된 제품",s.productView);
+    },
+   
   },
   
   

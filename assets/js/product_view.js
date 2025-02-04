@@ -37,7 +37,7 @@ $(window).on("wheel", wheelFn);
 // wheelFn s ////
 function wheelFn(e) {
   // (4-1) 기본기능막기 ///////
-  e.preventDefault();
+  // e.preventDefault();
 
   // (4-2) 광휠막기 ///////
   if (stsWheel) return;

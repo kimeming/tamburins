@@ -1,8 +1,11 @@
 // router.js
 import linkSetData from '/assets/data/gnb-data.js'
+import productList from '/assets/data/product-list.js';
 import { Main } from '/assets/js/component/main-comp.js';
 import { SubLayout } from '/assets/js/component/sub-comp.js';
 import { List } from "/assets/js/component/list-comp.js";
+import { View } from "/assets/js/component/view-comp.js";
+import { Community } from "/assets/js/component/sub-comp.js";
 
 const routes = [
   {
@@ -28,6 +31,24 @@ Object.keys(linkSetData).forEach((key) => {
   if (data.link && data.link.path) {
     const path = data.link.path;
 
+    let childRoute;
+
+    if (path === "/community") {
+      childRoute = {
+        path: ":subCategory?",
+        component: Community,
+      };
+    } else {
+      childRoute = {
+        path: ":subCategory?",
+        component: List,
+        props: (route) => ({
+          category: data.menu,
+          subCategory: route.params.subCategory,
+        }),
+      };
+    }
+
     routes.push({
       path: path, // 동적 경로 설정
       component: SubLayout, // SubLayout을 기본 레이아웃으로 설정
@@ -44,9 +65,22 @@ Object.keys(linkSetData).forEach((key) => {
           }),
         },
       ],
-    });
+    })
+    ;
   }
 });
+
+const itemPath = productList.idx ;
+console.log('hi',productList, itemPath);
+
+routes.push({
+  path: `/:itemPath`,
+  component: View,
+  props: (route) => ({
+    itemPath: route.params.itemPath,
+  }),
+})
+
 
 export const router = new VueRouter({
   mode: "history",

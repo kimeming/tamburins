@@ -1,0 +1,220 @@
+
+                <!-- 한남 [10] -->
+                <li>
+                  <div class="store_slide_wrap">
+                    <ul class="store_img">
+                      <li>
+                        <img src="./img/store/img_store_hannam_01.jpg" alt="플래그십 스토어 한남점 첫번째 이미지" />
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_hannam_02.jpg" alt="플래그십 스토어 한남점 두번째 이미지" />
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_hannam_03.jpg" alt="플래그십 스토어 한남점 세번째 이미지" />
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_hannam_04.jpg" alt="플래그십 스토어 한남점 네번째 이미지" />
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_hannam_05.jpg" alt="플래그십 스토어 한남점 다섯번째 이미지" />
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_hannam_06.jpg" alt="플래그십 스토어 한남점 여섯번째 이미지" />
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_hannam_07.jpg" alt="플래그십 스토어 한남점 일곱번째 이미지" />
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_hannam_08.jpg" alt="플래그십 스토어 한남점 여덟번째 이미지" />
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_hannam_09.jpg" alt="플래그십 스토어 한남점 아홉번째 이미지" />
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_hannam_10.jpg" alt="플래그십 스토어 한남점 열번째 이미지" />
+                      </li>
+                    </ul>
+                    <div class="store_indic">
+                      <ol></ol>
+                      <!-- 표시박스 -->
+                      <div class="indic_box"></div>
+                    </div>
+                  </div>
+                  <div class="store_contents">
+                    <div class="store_info">
+                      <h2 class="store_name">플래그십 스토어 한남</h2>
+                      <a href="#" class="store_address" target="_blank">지도보기</a>
+                    </div>
+                    <div class="store_disc">
+                      <p class="store_disc_address">서울특별시 용산구 이태원로 238</p>
+                      <p class="store_disc_phone">+82 70-4101-3274</p>
+                      <p>월-일 11:00am-9:00pm</p>
+                    </div>
+                  </div>
+                </li>
+                <!-- 성수 [7] -->
+                <li>
+                  <div class="store_slide_wrap">
+                    <ul class="store_img">
+                      <li>
+                        <img src="./img/store/img_store_seongsu_01.jpg" alt="플래그십 스토어 성수점 첫번째 이미지" />
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_seongsu_02.jpg" alt="플래그십 스토어 성수점 두번째 이미지" />
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_seongsu_03.jpg" alt="플래그십 스토어 성수점 세번째 이미지" />
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_seongsu_04.jpg" alt="플래그십 스토어 성수점 네번째 이미지" />
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_seongsu_05.jpg" alt="플래그십 스토어 성수점 다섯번째 이미지" />
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_seongsu_06.jpg" alt="플래그십 스토어 성수점 여섯번째 이미지" />
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_seongsu_07.jpg" alt="플래그십 스토어 성수점 일곱번째 이미지" />
+                      </li>
+                    </ul>
+                    <div class="store_indic">
+                      <ol></ol>
+                      <!-- 표시박스 -->
+                      <div class="indic_box"></div>
+                    </div>
+                  </div>
+                  <div class="store_contents">
+                    <div class="store_info">
+                      <h2 class="store_name">플래그십 스토어 성수</h2>
+                      <a href="#" class="store_address" target="_blank">지도보기</a>
+                    </div>
+                    <div class="store_disc">
+                      <p class="store_disc_address">서울 성동구 연무장5길 8</p>
+                      <p class="store_disc_phone">+82 70 4266 6142</p>
+                      <p>월-일 11:00am-9:00pm</p>
+                    </div>
+                  </div>
+                </li>
+                <!-- 삼청 [4] -->
+                <li>
+                  <div class="store_slide_wrap">
+                    <ul class="store_img">
+                      <li>
+                        <img src="./img/store/img_store_samcheong_01.jpg" alt="플래그십 스토어 삼청점 첫번째 이미지" />
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_samcheong_02.jpg" alt="플래그십 스토어 삼청점 두번째 이미지" />
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_samcheong_03.jpg" alt="플래그십 스토어 삼청점 세번째 이미지" />
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_samcheong_04.jpg" alt="플래그십 스토어 삼청점 네번째 이미지" />
+                      </li>
+                    </ul>
+                    <div class="store_indic">
+                      <ol></ol>
+                      <!-- 표시박스 -->
+                      <div class="indic_box"></div>
+                    </div>
+                  </div>
+                  <div class="store_contents">
+                    <div class="store_info">
+                      <h2 class="store_name">플래그십 스토어 삼청</h2>
+                      <a href="#" class="store_address" target="_blank">지도보기</a>
+                    </div>
+                    <div class="store_disc">
+                      <p class="store_disc_address">서울 종로구 율곡로3길 84</p>
+                      <p class="store_disc_phone">+82 70 4139 7450</p>
+                      <p>월-일 11:00am - 8:00pm</p>
+                    </div>
+                  </div>
+                </li>
+                <!-- 도산 [4] -->
+                <li>
+                  <div class="store_slide_wrap">
+                    <ul class="store_img">
+                      <li>
+                        <video
+                          src="./img/store/img_store_dosan_01.mp4"
+                          loop
+                          muted
+                          autoplay
+                          playsinline
+                          alt="하우스도산 첫번째 영상"
+                        ></video>
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_dosan_02.jpg" alt="하우스도산 두번째 이미지" />
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_dosan_03.jpg" alt="하우스도산 세번째 이미지" />
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_dosan_04.jpg" alt="하우스도산 네번째 이미지" />
+                      </li>
+                    </ul>
+                    <div class="store_indic">
+                      <ol></ol>
+                      <!-- 표시박스 -->
+                      <div class="indic_box"></div>
+                    </div>
+                  </div>
+                  <div class="store_contents">
+                    <div class="store_info">
+                      <h2 class="store_name">하우스도산</h2>
+                      <a href="#" class="store_address" target="_blank">지도보기</a>
+                    </div>
+                    <div class="store_disc">
+                      <p class="store_disc_address">서울 강남구 압구정로46길 50</p>
+                      <p class="store_disc_phone">+82 70 4128 2124</p>
+                      <p>월-일 11:00am - 9:00pm</p>
+                    </div>
+                  </div>
+                </li>
+                <!-- 신사점 [7] -->
+                <li>
+                  <div class="store_slide_wrap">
+                    <ul class="store_img">
+                      <li>
+                        <img src="./img/store/img_store_sinsa_01.jpg" alt="플래그십 스토어 신사점 첫번째 이미지" />
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_sinsa_02.jpg" alt="플래그십 스토어 신사점 두번째 이미지" />
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_sinsa_03.jpg" alt="플래그십 스토어 신사점 세번째 이미지" />
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_sinsa_04.jpg" alt="플래그십 스토어 신사점 네번째 이미지" />
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_sinsa_05.jpg" alt="플래그십 스토어 신사점 네번째 이미지" />
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_sinsa_06.jpg" alt="플래그십 스토어 신사점 네번째 이미지" />
+                      </li>
+                      <li>
+                        <img src="./img/store/img_store_sinsa_07.jpg" alt="플래그십 스토어 신사점 네번째 이미지" />
+                      </li>
+                    </ul>
+                    <div class="store_indic">
+                      <ol></ol>
+                      <!-- 표시박스 -->
+                      <div class="indic_box"></div>
+                    </div>
+                  </div>
+                  <div class="store_contents">
+                    <div class="store_info">
+                      <h2 class="store_name">플래그십 스토어 신사</h2>
+                      <a href="#" class="store_address" target="_blank">지도보기</a>
+                    </div>
+                    <div class="store_disc">
+                      <p class="store_disc_address">플래그십 스토어 신사</p>
+                      <p class="store_disc_phone">+82 02 511 1246</p>
+                      <p>월-일 11:00am - 9:00pm</p>
+                    </div>
+                  </div>
+                </li>
+              
