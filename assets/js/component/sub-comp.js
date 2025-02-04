@@ -27,10 +27,6 @@ export const subTop = {
   },
   created() {},
   mounted() {
-    $('.category-tab').each((i,x)=>{
-      console.log(i,x)
-      if($(x).find('.on')) $(x).children('.on').parents().hide();
-    });
   },
 };
 

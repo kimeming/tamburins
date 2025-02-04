@@ -120,7 +120,7 @@ export const View = {
                                 <button>
                                   <i class="fa-solid fa-chevron-right" style="color: #1d1d1d"></i>
                                 </button>
-                                <h3>제품상세정보</h3>
+                                <h3>제품 상세정보</h3>
                                 <p>
                                   감각적으로 향을 즐길 수 있는 새로운 형태의 퍼퓸밤. 핸디한 사이즈의 퍼퓸 밤과 함께
                                   어디서든 자유롭게 향을 경험하고 스스로를 표현해보세요. 부드러운 텍스처로 맥박이 뛰는
@@ -255,6 +255,17 @@ export const View = {
       $('head').append(`
         <script type="module" src="/assets/js/product_view.js"></script>
        `);
-    }
+    },
+    computed: {
+      currentCategory() {
+        return this.$store.state.currentCategory;  // currentCategory 값
+      },
+      currentSubCategory() {
+        return this.$store.state.currentSubCategory;  // currentSubCategory 값
+      }
+    },
+    created(){
+      this.$store.commit('setPath', this.$route);
+    },
 
 }

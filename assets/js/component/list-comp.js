@@ -13,7 +13,7 @@ export const List = {
               :key="v.idx"
               @click.prevent="getProductNum(v.idx)"
               >
-            <router-link :to="'/'+v.idx">
+            <router-link :to="'/' + currentCategory + '/' + currentSubCategory + '/' + v.idx">
               <section class="product-img-wrap">
                 <img :src="v.pImage" :alt="v.pTitle" />
                 <button class="add-to-cart-btn">
@@ -34,15 +34,7 @@ export const List = {
       </div>
   </div>
   `,
-  // watch: {
-  //   "$route.params.subCategory": {
-  //     immediate: true,
-  //     handler(newSubCategory) {
-  //       console.log("라우트 변경 감지:", newSubCategory);
-  //       this.$store.commit("setListData", newSubCategory); // Vuex에 전달
-  //     }
-  //   }
-  // },
+
   methods: {
     getProductNum(pm) {
       console.log("선택한 제품 ID:", pm);
@@ -50,9 +42,20 @@ export const List = {
     }
     
   },
+  computed: {
+    currentCategory() {
+      return this.$store.state.currentCategory;  // currentCategory 값
+    },
+    currentSubCategory() {
+      return this.$store.state.currentSubCategory;  // currentSubCategory 값
+    }
+  },
   mounted(){
     $('head').append(`
-     <link rel="stylesheet" type="text/css" href="/assets/css/product-list.css" />
+      <link rel="stylesheet" type="text/css" href="/assets/css/product-list.css" />
     `);
-  }
+  },
+  created(){
+    this.$store.commit('setPath', this.$route);
+  },
 };
