@@ -15,11 +15,14 @@ export default new Vuex.Store({
     productList,
     // 제품 디테일
     productDetail,
+    // 카테고리 데이터
     catName: "",
     catList: {},
+    // 상품 상세 데이터
     productView: {},
+    // 현재 path 데이터
     currentCategory: "",
-    currentSubCategory: "", // 현재 subCategory 추가
+    currentSubCategory: "",
   },
 
   // (2) 데이터 변경 구역 : mutations
