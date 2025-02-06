@@ -4,7 +4,7 @@
 html {
   scroll-behavior: smooth;
 }
-.contents {
+.view .contents {
   margin-top: 0;
 }
 /* product-view-wrap */
@@ -276,7 +276,7 @@ rotate: 90deg;
 
 /******************* 1024px *******************/
 @media (max-width: 1024px) {
-  .sub-top {
+  .view .sub-top {
     display: none;
   }
   

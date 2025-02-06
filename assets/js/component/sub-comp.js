@@ -34,13 +34,13 @@ export const SubLayout = {
   props: ["showSubTop"],
   template: `
         <div class="sub-container" id="main">
-            <sub-top-comp v-if="showSubTop"></sub-top-comp>
+            <sub-top-comp v-if="$store.state.showSubTop"></sub-top-comp>
             <router-view></router-view>
         </div>
         
     `,
   components: {
-    "sub-top-comp": subTop, // 상단 컴포넌트
+    "sub-top-comp": subTop,
   },
 };
 

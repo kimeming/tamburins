@@ -70,24 +70,6 @@ const linkSetData = {
   },
   STORE: {
     link: { path: "/store" },
-    menu: {
-      대한민국: {
-        name: "store",
-        params: { item: "대한민국", cls: "korea" },
-      },
-      일본: {
-        name: "store",
-        params: { item: "일본", cls: "japan" },
-      },
-      중국: {
-        name: "store",
-        params: { item: "중국", cls: "china" },
-      },
-      전시: {
-        name: "store",
-        params: { item: "전시", cls: "exhibition" },
-      },
-    },
   },
   COMMUNITY: {
     link: { path: "/community" },
@@ -97,7 +79,7 @@ const linkSetData = {
         params: { item: "FAQ", cls: "faq" },
       },
       고객서비스: {
-        name: "service",
+        name: "community",
         params: { item: "service", cls: "service" },
       },
     },

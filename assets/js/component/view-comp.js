@@ -5,7 +5,7 @@ console.log(store)
 
 export const View = {
     template:`
-  <div class="sub-container" id="main">
+  <div class="sub-container view" id="main">
 
     <div class="contents">
           <!-- product-view s -->
@@ -103,7 +103,7 @@ export const View = {
                         <a href="#" class="link-btn round-btn">50mL</a>
                       </div>
                       <div class="btn-wrap">
-                        <button type="button" class="add-btn">Add To Cart</button>
+                        <button type="button" class="add-btn" @click="addToCart">Add To Cart</button>
                       </div>
                     </div>
                     <!-- more-option e -->
@@ -245,8 +245,38 @@ export const View = {
             productDetail: productDetail,
         }
     },
-    methods:{
-
+    methods: {
+      addToCart() {
+        const product = {
+          id: this.$store.state.productView.pId, // 제품 ID
+          name: this.$store.state.productView.pTitle, // 제품명
+          price: parseFloat(this.$store.state.productView.pPrice.replace(/[^\d.-]/g, "")), // 가격
+          image: this.$store.state.productView.pImage, // 이미지
+          quantity: 1 // 기본 수량 1
+        };
+    
+        // localStorage에서 기존 장바구니 데이터 불러오기
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+        // 동일한 제품이 있는지 확인
+        let existingProduct = cart.find((item) => item.id === product.id);
+        if (existingProduct) {
+          existingProduct.quantity += 1; // 이미 있으면 수량 증가
+        } else {
+          cart.push(product); // 없으면 새로 추가
+        }
+    
+        // localStorage에 저장 (기존 데이터를 유지하며 새 데이터만 추가)
+        localStorage.setItem("cart", JSON.stringify(cart));
+    
+        // Vuex Store에 장바구니 업데이트
+        this.$store.commit('updateCart', cart);
+    
+        // 장바구니 상태 업데이트 (Vue 컴포넌트에서 cartItems를 반영하고 싶다면)
+        this.cartItems = cart; // 이 부분이 필요할 수 있습니다. (옵션)
+    
+        alert("장바구니에 추가되었습니다!");
+      }
     },
     mounted(){
       $('head').append(`

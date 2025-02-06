@@ -66,7 +66,7 @@ export const GNB = {
               <nav class="gnb">
                   <ul class="gnb-list">
                     <li v-for="(item, key) in linkSetData" :key="key" >
-                      <router-link class="dep1" :to="item.link.path" >{{ key }}</router-link>
+                      <router-link class="dep1" :to="item.link.path" @click.prevent>{{ key }}</router-link>
                       <ul v-if="item.menu && Object.keys(item.menu).length" class="dep2">
                         <li v-for="(subItem, subKey) in item.menu" :key="subKey" @click="catData1(subKey)">
                           <!-- 서브카테고리 링크 -->
@@ -84,7 +84,6 @@ export const GNB = {
               <!-- gnb-link s -->
               <div class="gnb-link">
                   <ul class="link-list">
-                      <li><a href="#">고객서비스</a></li>
                       <li><a href="#">SHOP IN KOREAN</a></li>
                   </ul>
               </div>
@@ -110,8 +109,8 @@ export const Header = {
         </h1>
         <gnb-comp></gnb-comp>
         <div class="util">
-          <button type="button" class="account-btn cart-btn"><span class="blind">로그인 버튼</span></button>
-          <button type="button" class="cart-btn"><span class="blind">장바구니 버튼</span></button>
+          <button type="button" class="account-btn" @click="goToPage('/login')"><span class="blind">로그인 버튼</span></button>
+          <button type="button" class="cart-btn" @click="goToPage('/cart')"><span class="blind">장바구니 버튼</span></button>
           <button type="button" class="menu-btn">
             <span class="blind">메뉴 버튼</span>
             <span class="line"></span>
@@ -125,6 +124,11 @@ export const Header = {
     "search-comp": SearchWrap,
     "gnb-comp": GNB,
   },
+  methods: {
+    goToPage(path) {
+      this.$router.push(path);  // Vue Router로 페이지 이동
+    }
+  }
 };
 
 // Footer 컴포넌트
@@ -141,8 +145,8 @@ export const Footer = {
                     <div class="left">
                       <p class="bold">COMMUNITY</p>
                       <ul class="footer-link">
-                        <li><a href="#">공지사항</a></li>
-                        <li><a href="#">고객서비스</a></li>
+                        <li><a href="/assets/error.html">공지사항</a></li>
+                        <li><a href="/community/service">고객서비스</a></li>
                       </ul>
                     </div>
                     <div class="right">

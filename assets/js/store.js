@@ -5,10 +5,11 @@
   - prev, next 버튼 없이 스와이프로 동작
   - 배너 개수에 맞게 하단에 바형 인디케이터 설정 및 조작
 **************************************************************/
-// 데이터 불러오기
+
+// 카테고리별 제이슨 데이터 불러오기
 import storeData from '../data/store-banner.json' with { type: "json" };
 
-// 대상요소
+// 스와이프 대상요소
 const descEle = document.querySelector(".store-desc");
 const targetList = document.querySelector(".store_list");
 
@@ -22,27 +23,27 @@ setListFn(0);
   함수명 : setListFn
   기능 : 스토어 배너 리스트 생성함수
 ************************************/
-function setListFn(setNum) { // setNum - 국가코드배열순번전달변수
-  // 선택 데이터 할당하기
-  const selData = storeData[countryCode[setNum]];
+function setListFn(countryNum) {
+  // countryNum - 국가코드 전달변수
+
+  // 선택 데이터 할당
+  const selData = storeData[countryCode[countryNum]];
 
   console.log(selData, targetList, descEle);
 
   ////// 스와이프 배너 구현 //////
   targetList.innerHTML = selData.map(
     (v) => `
-    <li class="${setNum==3?'exhibition':''}">
+    <li class="${countryNum == 3 ? "exhibition" : ""}">
       <div class="store_slide_wrap">
         <ul class="store_img">
         ${Array.from({ length: v["img-cnt"] })
           .map(
             (val, seq) => `
           <li>
-            <img src="./img/store/img_store_${v["img-key"]}_${
-              seq < 9 ? "0" + (seq + 1) : seq + 1
-            }.jpg" alt="${v.name} ${
-              seq < 9 ? "" + (seq + 1) : seq + 1
-            }번째 이미지" />
+            <img src="/assets/img/store/img_store_${v["img-key"]}_${seq < 9 ? "0" + (seq + 1) : seq + 1}.jpg" alt="${
+              v.name
+            } ${seq < 9 ? "" + (seq + 1) : seq + 1}번째 이미지" />
           </li>
           `
           )
@@ -57,10 +58,16 @@ function setListFn(setNum) { // setNum - 국가코드배열순번전달변수
       <div class="store_contents">
         <div class="store_info">
           <h2 class="store_name">${v["name"]}</h2>
-          ${setNum == 3 ? (setNum == 3 ? '' : `<a href="${v["store-map"]}" class="store_address" target="_blank">지도보기</a>`) : `<a href="${v["store-map"]}" class="store_address" target="_blank">지도보기</a>`}
+          ${
+            countryNum == 3
+              ? countryNum == 3
+                ? ""
+                : `<a href="${v["store-map"]}" class="store_address" target="_blank">지도보기</a>`
+              : `<a href="${v["store-map"]}" class="store_address" target="_blank">지도보기</a>`
+          }
         </div>
-        <div class="store_disc exhibition">
-          ${setNum==3?"<p class='store_description'>"+v['store-desc']+"</p>":''}
+        <div class="store_disc">
+          ${countryNum == 3 ? "<p class='store_description exhibition'>" + v["store-desc"] + "</p>" : ""}
           <p class="store_disc_address">${v["store-address"]}</p>
           <p class="store_disc_phone">${v["store-phone"]}</p>
           <p>${v["store-time"]}</p>
@@ -68,11 +75,12 @@ function setListFn(setNum) { // setNum - 국가코드배열순번전달변수
       </div>
     </li>
   `
-  );
-  const targetEl = document.querySelectorAll(".store_slide_wrap");
-  ////// 스와이프 배너 구현 //////
+  ).join("");
 
-  ////// 인디케이터 //////
+  const targetEl = document.querySelectorAll(".store_slide_wrap");
+  //////// 스와이프 ////////
+
+  ////// 배너 이미지 개수에 맞게 인디케이터 설정 //////
   targetEl.forEach((el) => setElFn(el));
 
   function setElFn(tgEl) {
@@ -120,12 +128,10 @@ function setListFn(setNum) { // setNum - 국가코드배열순번전달변수
       startX = e.pageX;
       e.preventDefault(); // 기본 동작 방지
     });
-
     tgEl.addEventListener("mousemove", (e) => {
       endX = e.pageX;
       e.preventDefault(); // 기본 동작 방지
     });
-
     tgEl.addEventListener("mouseup", () => {
       if (startX > endX + 50) {
         // 왼쪽으로 스와이프
@@ -136,21 +142,14 @@ function setListFn(setNum) { // setNum - 국가코드배열순번전달변수
       }
     });
 
-    function goToSlide(index) {
-      currentIndex = index;
-      updateSlides();
-    }
-
     function nextSlide() {
       currentIndex = (currentIndex + 1) % slides.length;
       updateSlides();
     }
-
     function prevSlide() {
       currentIndex = (currentIndex - 1 + slides.length) % slides.length;
       updateSlides();
     }
-
     function updateSlides() {
       slides.forEach((slide, index) => {
         slide.style.display = index === currentIndex ? "block" : "none";
@@ -162,27 +161,27 @@ function setListFn(setNum) { // setNum - 국가코드배열순번전달변수
     }
 
     updateSlides(); // 초기 슬라이드 설정
-  } ////////////// setElFn 함수 /////////////////////
+  } // setElFn
 
-  if(setNum==0){
-    descEle.style.display = 'block';
-  } /// if ///
-  else{
-    descEle.style.display = 'none';
-  } /// else ///
-} //////////// setListFn 함수 ////////////
+  // [대한민국] 카테고리에는 별도 서브메뉴 노츨 //
+  if (countryNum == 0) {
+    descEle.style.display = "block";
+  } // if
+  else {
+    descEle.style.display = "none";
+  } // else
+} // setListFn 함수 
 
+// 카테고리 탭 메뉴
 document.querySelectorAll(".category-tab li").forEach((el, i, obj) => {
-  // el-해당요소, i-순번, obj-요소전체
   el.onclick = function () {
-    console.log(this);
-    // 클래스 넣기/제거하기 기능
+
     // 전부 클래스 on제거
     obj.forEach((ele) => ele.classList.remove("on"));
     // 해당요소만 on넣기
     this.classList.add("on");
 
-    // 리스트생성함수 호출하기
+    // 리스트생성함수 호출
     setListFn(i);
   };
 });

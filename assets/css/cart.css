@@ -3,7 +3,7 @@
 .inner-cont.wide {max-width: 1200px;}
 
 /* input s */
-input {appearance: none; background: none; border: none;}
+.cart-wrap input {appearance: none; background: none; border: none;}
 .checkbox input[type="checkbox"] {width: 16px; height: 16px; border: 1px solid #000;}
 .checkbox input[type="checkbox"]:checked {background: url('../img/common/icon-check-on.svg') no-repeat center;}
 /* input e */

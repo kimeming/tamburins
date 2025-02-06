@@ -3,16 +3,14 @@
 // [1] 공통컴포넌트
 // import { TopComp } from "./components/common.js";
 // import { BannerComp } from "./components/banner.js";
-import { JoinComp } from "./component/login-comp.js";
-
-console.log(JoinComp);
+import { JoinComp, LoginComp } from "./component/login-comp.js";
 
 /******************************* 
     메인 뷰 인스턴스 생성하기 
 ********************************/
 new Vue({
     // 1. 대상설정
-    el: '#join-app',
+    el: '#main',
     // 2. 데이터설정
     data:{},
     // 3. 메서드설정

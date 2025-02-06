@@ -1,9 +1,10 @@
 $(() => {
+  // header intro animation - 첫 진입 시에만
   let animationPlayed = false;
+  let isResizing = false;
 
-  // 첫 진입 시에만 실행
   function headerAni() {
-    if (animationPlayed) return;
+    if (animationPlayed || isResizing) return;
     animationPlayed = true;
 
     if (window.innerWidth >= 1024) {
@@ -14,9 +15,11 @@ $(() => {
       $("body").addClass("on");
 
       // 스크롤 위치 확인
-      if ($(window).scrollTop() > 0) $logo.addClass("active");
+      if ($(window).scrollTop() > 0) {
+        $logo.addClass("active");
+      }
 
-      setTimeout(() => {
+      setTimeout(function () {
         $logo.addClass("active");
         pcVideo[0].play();
         $(".header .util, .header-left").fadeIn();
@@ -25,15 +28,15 @@ $(() => {
     }
   }
 
-  // 리사이즈 이벤트 처리 (리사이즈 중에는 애니메이션 실행하지 않음)
-  let isResizing = false;
-  $(window).on("resize", () => {
-    if (isResizing) return;
-    isResizing = true;
-    setTimeout(() => isResizing = false, 500);
+  // 리사이즈 이벤트 처리
+  $(window).on("resize", function () {
+    isResizing = true; 
+    setTimeout(function () {
+      isResizing = false;
+    }, 500);
   });
 
-  // 페이지 첫 로드 시에만 애니메이션 실행
+  // 초기 애니메이션 실행
   headerAni();
 
   // store slide
@@ -50,7 +53,7 @@ $(() => {
     },
     loop: true,
     on: {
-      slideChange() {
+      slideChange: function () {
         const storeArr = [
           "플래그십 스토어 한남",
           "플래그십 스토어 성수",
@@ -58,11 +61,13 @@ $(() => {
           "하우스 도산",
           "플래그십 스토어 신사",
         ];
+        let realIdx = this.realIndex;
         const storeName = document.querySelector(".store-name");
-        const realIdx = this.realIndex;
 
-        // 클래스 초기화 및 텍스트 변경 후 클래스 추가
+        // 클래스 초기화
         storeName.classList.remove("show");
+
+        // 텍스트 추가 후 클래스 재추가
         setTimeout(() => {
           storeName.innerText = storeArr[realIdx];
           storeName.classList.add("show");
@@ -72,9 +77,9 @@ $(() => {
   });
 
   // section header change
-  const header = document.querySelector("header");
-  const sections = document.querySelectorAll("section");
-  const headerHeight = header.offsetHeight;
+  const header = document.querySelector("header"); // header 요소 선택
+  const sections = document.querySelectorAll("section"); // 모든 section 요소 선택
+  const headerHeight = header.offsetHeight; // header의 높이 계산
 
   window.addEventListener("scroll", () => {
     let addBlackClass = false;
@@ -84,13 +89,20 @@ $(() => {
 
       // 섹션의 상단이 헤더 높이만큼 보였을 때 조건 확인
       if (rect.top <= headerHeight && rect.bottom >= headerHeight) {
-        if (section.classList.contains("best") || section.classList.contains("store")) {
+        if (
+          section.classList.contains("best") ||
+          section.classList.contains("store")
+        ) {
           addBlackClass = true;
         }
       }
     });
 
     // header에 black 클래스 추가/제거
-    header.classList.toggle("black", addBlackClass);
+    if (addBlackClass) {
+      header.classList.add("black");
+    } else {
+      header.classList.remove("black");
+    }
   });
 });

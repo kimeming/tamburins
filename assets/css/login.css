@@ -137,26 +137,47 @@
 
 
 
-.inner-cont {
+
+
+
+
+
+.login {
     margin-top: 200px;
+}
+
+#main-area {
+    display: flex;
+    justify-content: center;
+}
+.eyeli {
+    position:relative;
+}
+.eye {
+position: absolute;
+transform: translate(50%, 50%);
 }
 .ctop h2 {
     border-bottom: 1px solid #000;
     font-size: 1.5rem;
     margin-right: 20px;
     width: 345px;
-    margin-left: 100px;
+    /* margin-left: 100px; */
 }
 .logF ul {
     text-align: left;
-    margin-left: 100px;
+    /* margin-left: 100px; */
+}
+.logF ul li {
+    max-width: 345px;
 }
 .logF ul li input {
     border-radius: 5px;
     border: 1px solid #000;
     margin: 5px 0;
     justify-content: center;
-    width: 345px;
+    /* max-width: 345px; */
+    width: 100%;
     height: 40px;
     font-size: 13px;
 }
@@ -199,9 +220,7 @@
 
 
 @media (max-width: 1024px) {
-    .inner-cont {
-        margin-left: 100px;
-    }
+
 }
 @media (max-width: 375px) {
     .inner-cont {
@@ -238,110 +257,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
-.inner-cont {
-    margin-top: 200px;
-}
-.ctop h2 {
-    border-bottom: 1px solid #000;
-    font-size: 1.5rem;
-    width: 345px;
-}
-.logF ul {
-    text-align: left;
-}
-.logF ul li input {
-    border-radius: 5px;
-    border: 1px solid #000;
-    margin: 5px 0;
-    justify-content: center;
-    width: 345px;
-    height: 40px;
-    font-size: 13px;
-}
-.logF ul li input[type=radio] {
-    width: 10px;
-    height: 20px;
-    transform: translateY(5px);
-
-}
-.logF ul li:nth-of-type(6) {
-    width: 345px;
-    display: block;
-    justify-content: space-between;
-    width: 100%;
-}
-#email2 {
-    width: 30%;
-}
-.logF ul li:nth-of-type(6) input,
-.logF ul li:nth-of-type(7) input  {
-    width: 100px;
-}
-.msg {
-    color:#f00;
-    font-size: 0.7rem;
-}
-#btnj {
-    background-color: #fff;
-    border: none;
-    width:60px;
-}
-.gol {
-    line-height: 44px;
-}
-.noneid {
-    color: #4b4b4b;
-}
-
-
-@media (max-width: 1024px) {
-    .inner-cont {
-        margin-left: 100px;
-    }
-}
-@media (max-width: 375px) {
-    .inner-cont {
-        margin-top: 0
-        ;
-        margin-left: -00px;
-    }
-    .ctop {
-        margin-left: 0px;
-    }
-    .ctop h2 {
-        border-bottom: 1px solid #000;
-        font-size: 1.5rem;
-        width: 345px;
-        margin-left:0px;
-    }
-    .logF ul {
-        text-align: center;
-        width: 345px;
-        text-align: left;
-        margin-left: 10px;
-    }
-    .logF ul li input {
-        width: 320px;
-    }
-    .logF ul li:nth-of-type(6) {
-        width: 320px;
-        display: flex;
-        justify-content: space-between;
-    }
-} */

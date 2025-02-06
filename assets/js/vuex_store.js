@@ -6,6 +6,7 @@ import { Header, Footer } from "./component/layout-comp.js";
 import { List } from "./component/list-comp.js";
 import { View } from "./component/view-comp.js";
 import { subTop } from "./component/sub-comp.js";
+import { Store } from "./component/store-comp.js";
 
 
 // [1] 전역컴포넌트 만들기
@@ -29,6 +30,7 @@ new Vue({
     "header-comp": Header,
     "list-contents-comp": List,
     "view-comp": View,
+    "store-comp": Store,
     "footer-comp": Footer,
   },
   data: {
@@ -44,12 +46,5 @@ new Vue({
   },
   // DOM 관련 코딩
   mounted() {
-    const tab = document.querySelectorAll(".tab");
-    tab.forEach((t) => {
-      t.onclick = function () {
-        tab.forEach((el) => el.classList.remove("on"));
-        this.classList.add("on");
-      };
-    });
   },
 });

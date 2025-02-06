@@ -23,6 +23,8 @@ export default new Vuex.Store({
     // 현재 path 데이터
     currentCategory: "",
     currentSubCategory: "",
+    // sub-top 노출 여부
+    showSubTop: false,
   },
 
   // (2) 데이터 변경 구역 : mutations
@@ -34,7 +36,7 @@ export default new Vuex.Store({
     },
     setViewData(s, pm) {
       s.productView = s.productList.find(v => v.idx == pm);
-      console.log("선택된 제품:", s.productView, s.catName);
+      console.log("선택된 제품:", s.productView);
     },
     setPath(s, route) {
       s.currentCategory = route.params.category || ""; // 카테고리 저장
@@ -44,6 +46,17 @@ export default new Vuex.Store({
     setCategory(s, category) {
       s.currentCategory = category;  // 카테고리 저장
     },
+    setPath(s, route) {
+      const paths = route.path.split("/").filter(Boolean); // 빈 값 제거
+      s.currentCategory = paths[0] || ""; // 첫 번째가 카테고리
+      s.currentSubCategory = paths[1] || ""; // 두 번째가 서브 카테고리
+    },
+    setShowSubTop(state, value) {
+      state.showSubTop = value;
+    },
+    updateCart(state, cart) {
+      state.cart = cart; // 카트 상태 업데이트
+    }
   },
 
   // (3) 비동기처리 메서드구역 : actions

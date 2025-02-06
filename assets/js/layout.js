@@ -32,6 +32,8 @@ $(() => {
       $dep2A.removeClass('on');
       if($currentDep2.length > 0){
           e.preventDefault();
+      } else {
+        gnbClose();
       }
       if(!$(this).parent().hasClass('active')){
           $(this).parent().addClass('active').siblings().removeClass('active');

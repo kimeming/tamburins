@@ -1,6 +1,10 @@
 @charset "utf-8";
 /* sub 레이아웃 */
-.header.black {background: #fff;}
+.header {background: #fff;}
+.header .search-open-btn {background-image: url('../img/main/icon_search_b.svg');}
+.header .menu-btn {--menu-btn-color: #000;}
+.header .util button.cart-btn {background-image: url('../img/main/icon_bag_b.svg');}
+.header .util button.account-btn {background-image: url('../img/main/icon_account_b.svg');}
 
 .sub-top {position: fixed; top: var(--header-height);  width: 100%; background-color: #fff; z-index: 15;}
 .sub-top .inner {width: 100%; max-width: 1600px; display: flex; flex-direction: column; margin: 0 auto;}
@@ -9,7 +13,6 @@
 .category-tab>li {height: 30px; padding: 0 20px; line-height: 30px; background: #EFEFEF; color: #777; border-radius: 20px; font-size: 13px;}
 .category-tab>li.on {color: #fff; background: #000; }
 .category-tab:has(li.on) {display: flex; }
-
 
 .contents {margin-top: calc(var(--header-height) + 95px);}
 .contents.type2 {margin-top: var(--header-height);}

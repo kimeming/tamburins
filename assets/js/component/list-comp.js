@@ -13,7 +13,7 @@ export const List = {
               :key="v.idx"
               @click.prevent="getProductNum(v.idx)"
               >
-            <router-link :to="'/' + currentCategory + '/' + currentSubCategory + '/' + v.idx">
+            <router-link :to="productLink(v.idx)">
               <section class="product-img-wrap">
                 <img :src="v.pImage" :alt="v.pTitle" />
                 <button class="add-to-cart-btn">
@@ -39,6 +39,12 @@ export const List = {
     getProductNum(pm) {
       console.log("선택한 제품 ID:", pm);
       this.$store.commit("setViewData", pm);
+    },
+
+    productLink(idx) {
+      return {
+        path: `/detail/${idx}`
+      };
     }
     
   },
