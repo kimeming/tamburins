@@ -1,259 +1,167 @@
-/* .contents-tit {
-    font-size: 16px;
+h3.contents-tit {
+    margin-bottom: 0px;
     border-bottom: 1px solid #000;
-}
-.inner-cont h3 {
-    font-size: 15px;
-    font-weight: 500;
-}
-.inner-cont.login {max-width: 400px;
-    margin-bottom: 220px;
-}
-.login_scont {
-    text-align: center;
-}
-.login_scont input[type=text],
-.login_scont input[type=password]{
-    width: 345px;
-    height: 40px;
-    border: 1px solid #777;
-    border-radius: 5px;
-    padding-left: 5px;
-    box-sizing: border-box;
-    padding: 0.5% 10px;
-    color: #1d1d1d;
-    font-size: 13px;
-}
-.login_scont input[type=text] {
-    margin-bottom: 15px;
+    font-weight: normal;
+    font-size: 1.5rem;
+    max-width: 345px;
     width: 100%;
 }
-.login_scont input[type=password] {
-    margin-bottom: 2%;
-    width: 100%
-}
-.login_scont input[type=submit] {
-    background-color: black;
-    width: 345px;
-    height: 40px;
-    
-    border-radius: 5px;
-    padding-left: 5px;
-    color:#fff;
-    font-size: 12px;
-    width: 100%
-}
-#sbtn {
-    background-color: black;
-    margin: 20px 0 14px 0;
+.login_scont {
+    margin-top: 15px;
 }
 .addbx {
-    text-align: center;
-    font-size: 12px;
-    margin-top: 5%;
+    margin-top: 15px;
+    font-size: 16px;
 }
-.addbx span a {
-    color: #000;
-    text-decoration: none;
-    margin-right: 5px;
-}
-.addbx span:nth-of-type(1) a{
-    color: #7e7e7e;
-}
-.login_scont ul li:nth-of-type(5) {
-    margin-bottom: 2%;
-    font-size: 13px;
-}
-#seleml {
-    margin-bottom: 15px;
-    margin-left: 10px;
-}
-.stit {
-    border-bottom: 1px solid #000;
-    margin-bottom: 25px;
-}
-.login_scont ul li:nth-of-type(6) {
+
+.willbec {
     display: flex;
     justify-content: center;
 }
-#email1 {
-    width: calc(50% - 17px);
+.login_scont {
+    width: 100%;
 }
-#email2 {
-    width: calc(50% - 17px);
+.login_scont .box {
+    width: 100%;
 }
-.gol {
-    margin: 0 10px;
-    line-height: 35px;
+.login_scont input {
+    width: 100%;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #000;
+    padding: 0 5px;
+    font-size: 1rem;
+    height: 40px;
+}
+
+#sbtn {
+    background-color: #000;
+    color: #fff;
+}
+
+.addbx span:nth-of-type(1) a {
+    font-size: 16px;
+}
+
+.addbx span:nth-of-type(2) a {
+    font-size: 16px;
+    padding: 0 5px;
+}
+
+/*  */
+
+.loginin {
+    max-width: 345px;
+    width: 100%;
+    display: block;
+    margin-top: 10vh;
 }
 
 
-@media screen and (max-width: 1024px) {
-    ul {
-        list-style: none;
-        padding: 0;
-    }
-    .box {
-        width: 100%;
-        
-    }
-    .login_scont input[type=text],
-    .login_scont input[type=password]{
-        width: 100%;
-    }
-    .login_scont input[type=text] {
-        margin-bottom: 2%;
-    }
-    #sbtn {
-        width: 100%;
-    }
-    .addbx {
-        margin-top: 0;
-    }
-    .login_scont input[type=submit] {
-        width: 100%;
-    }
-    .login_scont ul li:nth-of-type(5) {
-        margin-bottom: 2%;
-    }
-    .login_scont ul li:nth-of-type(7) {
-        margin-bottom: 15px;
-    }
+#join-app {
+    max-width: 345px;
+    width: 100%;
+}
 
-    .login_scont ul li:nth-of-type(6) {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    #email2 {
-        flex-direction: column;
-    }
-    #seleml {
-        width: 100%;
-        margin-left: 0px;
-    }
-} */
+#join-app .main-area {
+    width: 100%
+}
 
-
-
-
-
-
-
+#join-app .main-area .ibx {
+    width: 100%
+}
 
 .login {
-    margin-top: 200px;
+    margin-top: 10vh;
+    display: flex;
+    justify-content: center;
 }
 
 #main-area {
     display: flex;
     justify-content: center;
 }
+
 .eyeli {
-    position:relative;
+    position: relative;
 }
+
 .eye {
-position: absolute;
-transform: translate(50%, 50%);
+    position: absolute;
+    transform: translate(50%, 50%);
 }
+
 .ctop h2 {
     border-bottom: 1px solid #000;
     font-size: 1.5rem;
-    margin-right: 20px;
-    width: 345px;
-    /* margin-left: 100px; */
+    margin-bottom:15px;
 }
+
 .logF ul {
     text-align: left;
-    /* margin-left: 100px; */
 }
-.logF ul li {
-    max-width: 345px;
-}
+
 .logF ul li input {
     border-radius: 5px;
     border: 1px solid #000;
     margin: 5px 0;
     justify-content: center;
-    /* max-width: 345px; */
     width: 100%;
     height: 40px;
-    font-size: 13px;
 }
+
 .logF ul li input[type=radio] {
     width: 10px;
     height: 20px;
     transform: translateY(5px);
 
 }
+
 .logF ul li:nth-of-type(6) {
-    width: 345px;
     display: flex;
     justify-content: space-between;
 }
+
+#email1,
 #email2 {
     width: 30%;
 }
+
+#seleml {
+    width: 31%;
+    border-radius: 5px;
+    margin: 5px;
+    height: 40px;
+}
+
 .logF ul li:nth-of-type(6) input,
-.logF ul li:nth-of-type(7) input  {
+.logF ul li:nth-of-type(7) input {
     width: 100px;
 }
+.logF ul li:nth-of-type(8), 
+.logF ul li input {
+    font-size: 16px;
+}
+
 .msg {
-    color:#f00;
+    color: #f00;
     font-size: 0.7rem;
 }
+
 #btnj {
     background-color: #fff;
     border: none;
-    width:60px;
+    width: 60px;
 }
+
 .gol {
     line-height: 44px;
 }
+
 .noneid {
     color: #4b4b4b;
 }
+
 .msg {
     display: block;
 }
-
-
-@media (max-width: 1024px) {
-
-}
-@media (max-width: 375px) {
-    .inner-cont {
-        margin-top: 0
-        ;
-        margin-left: -00px;
-    }
-    .ctop {
-        margin-left: 0px;
-    }
-    .ctop h2 {
-        border-bottom: 1px solid #000;
-        font-size: 1.5rem;
-        width: 345px;
-        margin-left:0px;
-    }
-    .logF ul {
-        text-align: center;
-        width: 345px;
-        text-align: left;
-        margin-left: 10px;
-    }
-    .logF ul li input {
-        width: 320px;
-    }
-    .logF ul li:nth-of-type(6) {
-        width: 320px;
-        display: flex;
-        justify-content: space-between;
-    }
-}
-
-
-
-
-

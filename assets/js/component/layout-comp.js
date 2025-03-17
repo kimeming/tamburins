@@ -1,5 +1,5 @@
 // layout.js
-import linkSetData from "/assets/data/gnb-data.js";
+import linkSetData from "../../data/gnb-data.js";
 import store from "../vuex_store_store.js";
 // SearchWrap 컴포넌트
 export const SearchWrap = {
@@ -105,7 +105,7 @@ export const Header = {
           <button type="button" class="search-open-btn"><span class="blind">검색 버튼</span></button>
         </div>
         <h1 class="logo">
-          <a href="/"><img src="/ASSETS/img/main/logo_red.svg" alt="TAMBURINS"></a>
+          <a href="#/"><img src="./assets/img/main/logo_red.svg" alt="TAMBURINS"></a>
         </h1>
         <gnb-comp></gnb-comp>
         <div class="util">
@@ -138,15 +138,15 @@ export const Footer = {
             <div class="footer-inner">
                 <div class="footer-top">
                     <div class="footer-logo">
-                        <img src="/ASSETS/img/main/logo.svg" alt="TAMBURINS">
+                        <img src="./assets/img/main/logo.svg" alt="TAMBURINS">
                     </div>
                 </div>
                 <div class="footer-btm">
                     <div class="left">
                       <p class="bold">COMMUNITY</p>
                       <ul class="footer-link">
-                        <li><a href="/assets/error.html">공지사항</a></li>
-                        <li><a href="/community/service">고객서비스</a></li>
+                        <li><a href="./assets/error.html">공지사항</a></li>
+                        <li><a href="#/community/service">고객서비스</a></li>
                       </ul>
                     </div>
                     <div class="right">

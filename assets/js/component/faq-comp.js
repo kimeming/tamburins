@@ -322,7 +322,7 @@ export const FaqComp = {
           </div>
   `,
   mounted() {
-    $("head").append(`<script type="module" src="/assets/js/faq.js"></script>`);
+    $("head").append(`<script type="module" src="./assets/js/faq.js"></script>`);
     // tab js
     const tabList = $('.tab-list>li>a');
     const tabView = $('.tab-view-list>li');

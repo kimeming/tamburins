@@ -1,17 +1,17 @@
 // 데이터
-import linkSetData from "/assets/data/gnb-data.js";
-import store from "/assets/js/vuex_store_store.js";
+import linkSetData from "../data/gnb-data.js";
+import store from "../js/vuex_store_store.js";
 
 // 컴포넌트 import
-import { Main } from "/assets/js/component/main-comp.js";
-import { SubLayout, Community } from "/assets/js/component/sub-comp.js";
-import { List } from "/assets/js/component/list-comp.js";
-import { View } from "/assets/js/component/view-comp.js";
-import { StoreComp } from "/assets/js/component/store-comp.js";
-import { LoginComp, JoinComp } from "./component/login-comp.js";
-import { FaqComp } from "./component/faq-comp.js";
-import { ServiceComp } from "./component/service-comp.js";
-import { CartComp } from "./component/cart-comp.js";
+import { Main } from "../js/component/main-comp.js";
+import { SubLayout, Community } from "../js/component/sub-comp.js";
+import { List } from "../js/component/list-comp.js";
+import { View } from "../js/component/view-comp.js";
+import { StoreComp } from "../js/component/store-comp.js";
+import { LoginComp, JoinComp } from "../js/component/login-comp.js";
+import { FaqComp } from "../js/component/faq-comp.js";
+import { ServiceComp } from "../js/component/service-comp.js";
+import { CartComp } from "../js/component/cart-comp.js";
 
 const itemPath = store.state.productView.idx;
 
@@ -35,6 +35,7 @@ const routes = [
   {
     path: "/community",
     component: Community,
+    redirect: "/community/faq",
     children: [
       {
         path: "faq",
@@ -54,6 +55,7 @@ const routes = [
     path: "/evening-glow",
     component: SubLayout,
     meta: { showSubTop: true },
+    redirect: "/evening-glow/evening-glow",
     children: [
       {
         path: "evening-glow",
@@ -67,6 +69,7 @@ const routes = [
     path: "/perfume",
     component: SubLayout,
     meta: { showSubTop: true },
+    redirect: "/perfume/perfume",
     children: [
       {
         path: "perfume",
@@ -86,6 +89,7 @@ const routes = [
     path: "/hand-lip",
     component: SubLayout,
     meta: { showSubTop: true },
+    redirect: "/hand-lip/shell-perfume-hand",
     children: [
       {
         path: "shell-perfume-hand",
@@ -99,18 +103,13 @@ const routes = [
         props: { category: "HAND&LIP", subCategory: "에그 립밤" },
         meta: { showSubTop: true },
       },
-      {
-        path: "chain-hand",
-        component: List,
-        props: { category: "HAND&LIP", subCategory: "체인 핸드" },
-        meta: { showSubTop: true },
-      },
     ],
   },
   {
     path: "/body",
     component: SubLayout,
     meta: { showSubTop: true },
+    redirect: "/body/showery-body",
     children: [
       {
         path: "showery-body",
@@ -130,6 +129,7 @@ const routes = [
     path: "/home-fragrance",
     component: SubLayout,
     meta: { showSubTop: true },
+    redirect: "/home-fragrance/car-diffuser",
     children: [
       {
         path: "car-diffuser",
@@ -163,17 +163,25 @@ routes.push({
 });
 
 const router = new VueRouter({
-  mode: "history",
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    return { x: 0, y: 0 }; // 항상 최상단으로 이동
+  }
 });
 
 // 경로 변경 시 Vuex에 path 정보 저장
 router.beforeEach((to, from, next) => {
   store.commit("setPath", to);
   const isMainPage = to.path === "/";
-  switchStyles(isMainPage ? "/assets/css/main.css" : "/assets/css/sub.css");
-  switchScripts(isMainPage ? "/assets/js/main.js" : "/assets/js/sub.js");
+  switchStyles(isMainPage ? "./assets/css/main.css" : "./assets/css/sub.css");
   store.commit("setShowSubTop", to.matched.some(record => record.meta.showSubTop));
+   // 메인 페이지로 돌아올 때 새로고침
+   if (to.path === '/' || to.path === '/#/') {
+    // 강제로 새로고침
+    if (from.path !== '/') {  // 메인 페이지에서 다른 페이지로 갔다가 돌아올 때만 새로고침
+      window.location.reload();
+    }
+  }
   next();
 });
 
@@ -189,17 +197,17 @@ function switchStyles(newHref) {
   document.head.appendChild(newLink);
 }
 
-// 스크립트 변경 함수
-function switchScripts(newSrc) {
-  let existingScript = document.querySelector(
-    "script[src*='main.js'], script[src*='sub.js']"
-  );
-  if (existingScript) existingScript.remove();
-  let newScript = document.createElement("script");
-  newScript.src = newSrc;
-  newScript.type = "module";
-  newScript.defer = true;
-  document.body.appendChild(newScript);
-}
+// // 스크립트 변경 함수
+// function switchScripts(newSrc) {
+//   let existingScript = document.querySelector(
+//     "script[src*='main.js'], script[src*='sub.js']"
+//   );
+//   if (existingScript) existingScript.remove();
+//   let newScript = document.createElement("script");
+//   newScript.src = newSrc;
+//   newScript.type = "module";
+//   newScript.defer = true;
+//   document.body.appendChild(newScript);
+// }
 
 export default router;

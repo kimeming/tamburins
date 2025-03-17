@@ -1,0 +1,44 @@
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 7.0-c000 1.000000, 0000/00/00-00:00:00        ">
+ <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:Description rdf:about=""
+    xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"
+    xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"
+    xmlns:stEvt="http://ns.adobe.com/xap/1.0/sType/ResourceEvent#"
+    xmlns:xmp="http://ns.adobe.com/xap/1.0/"
+    xmlns:exif="http://ns.adobe.com/exif/1.0/"
+    xmlns:tiff="http://ns.adobe.com/tiff/1.0/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:crs="http://ns.adobe.com/camera-raw-settings/1.0/"
+    xmlns:photoshop="http://ns.adobe.com/photoshop/1.0/"
+   xmpMM:OriginalDocumentID="xmp.did:196283eb-33e4-4666-bb01-d2b646134e95"
+   xmpMM:DocumentID="xmp.did:A8FA00845E9111EF9AEABE0759AA70B8"
+   xmpMM:InstanceID="xmp.iid:a6fc47db-1fef-4c35-8c0c-d5806cfdf254"
+   xmp:CreatorTool="Adobe Photoshop 24.5 (Macintosh)"
+   xmp:Rating="0"
+   xmp:MetadataDate="2025-02-07T11:01:36+09:00"
+   exif:ExifVersion="0231"
+   exif:PixelXDimension="1917"
+   exif:PixelYDimension="2370"
+   tiff:Orientation="1"
+   tiff:ImageWidth="1917"
+   tiff:ImageLength="2370"
+   dc:format="image/jpeg"
+   crs:RawFileName="img_evening_glow_07.jpg"
+   photoshop:SidecarForExtension="JPG"
+   photoshop:EmbeddedXMPDigest="9947C2F6D22D5F13BB8F0761FE2A1FBF">
+   <xmpMM:DerivedFrom
+    stRef:instanceID="xmp.iid:18d0b6b2-9fd6-42e5-831c-bbf6d6ed926e"
+    stRef:documentID="adobe:docid:photoshop:f11c3467-8f2b-884c-8d34-f59ce87f07c3"/>
+   <xmpMM:History>
+    <rdf:Seq>
+     <rdf:li
+      stEvt:action="saved"
+      stEvt:instanceID="xmp.iid:a6fc47db-1fef-4c35-8c0c-d5806cfdf254"
+      stEvt:when="2025-02-07T11:01:36+09:00"
+      stEvt:softwareAgent="Adobe Lightroom 8.1 (Macintosh)"
+      stEvt:changed="/metadata"/>
+    </rdf:Seq>
+   </xmpMM:History>
+  </rdf:Description>
+ </rdf:RDF>
+</x:xmpmeta>

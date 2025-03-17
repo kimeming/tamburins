@@ -4,10 +4,12 @@
 .header .search-open-btn {background-image: url('../img/main/icon_search_b.svg');}
 .header .menu-btn {--menu-btn-color: #000;}
 .header .util button.cart-btn {background-image: url('../img/main/icon_bag_b.svg');}
-.header .util button.account-btn {background-image: url('../img/main/icon_account_b.svg');}
+.header .util button.account-btn {background-image: url('../img/main/icon_account_b.svg'); z-index: 1;}
 
 .sub-top {position: fixed; top: var(--header-height);  width: 100%; background-color: #fff; z-index: 15;}
 .sub-top .inner {width: 100%; max-width: 1600px; display: flex; flex-direction: column; margin: 0 auto;}
+.sub-top .inner{display: none;}
+.sub-top .inner:has(li.on){display: block;}
 .sub-title {font-weight: bold; font-size: 16px; padding: 10px 15px; border-bottom: 1px solid var(--border-color); text-transform: uppercase;}
 .category-tab {padding: 10px 15px; display: flex; gap: 10px; overflow-x: auto; display: none;}
 .category-tab>li {height: 30px; padding: 0 20px; line-height: 30px; background: #EFEFEF; color: #777; border-radius: 20px; font-size: 13px;}
@@ -101,3 +103,7 @@
         margin: 30px 0 15px;
     }
 }
+
+/* 고객서비스 */
+.svc h4 {font-weight: bold;}
+

@@ -1,12 +1,11 @@
 // 제품 디테일페이지 컴포넌트 JS - product_view_comp
-import productDetail from "../../data/product-detail.js"
+import productDetail from "../../data/product-detail.js";
 import store from "../vuex_store_store.js";
-console.log(store)
+console.log(store);
 
 export const View = {
-    template:`
+  template: `
   <div class="sub-container view" id="main">
-
     <div class="contents">
           <!-- product-view s -->
           <div class="product-view-area">
@@ -17,41 +16,34 @@ export const View = {
                 <div class="product-slide">
                   <div class="product-slide-wrap">
                     <div class="product-detail-img">
-                      <img src="/assets/img/view/item1/img_item_01.jpg" alt="이브닝글로우" />
+                      <img :src="$store.state.productView.pImage" alt="이브닝글로우" />
                     </div>
                     <div class="product-detail-img">
-                      <img src="/assets/img/view/item1/img_item_02.jpg" alt="이브닝글로우" />
+                      <img src="./assets/img/view/item1/img_item_02.jpg" alt="이브닝글로우" />
                     </div>
                     <div class="product-detail-img">
-                      <img src="/assets/img/view/item1/img_item_03.jpg" alt="이브닝글로우" />
+                      <img src="./assets/img/view/item1/img_item_03.jpg" alt="이브닝글로우" />
                     </div>
                     <div class="product-detail-img">
-                      <img src="/assets/img/view/item1/img_item_04.jpg" alt="이브닝글로우" />
+                      <img src="./assets/img/view/item1/img_item_04.jpg" alt="이브닝글로우" />
                     </div>
                   </div>
-                  <div class="bullet-sticky-area">
-                    <div class="bullet-box">
-                      <div class="bullet on"></div>
-                      <div class="bullet"></div>
-                      <div class="bullet"></div>
-                      <div class="bullet"></div>
-                    </div>
-                  </div>
+                  
                 </div>
                 <!-- 슬라이드 2 -->
                 <div class="dragSwiper">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <img src="/assets/img/view/item1/img_item_01.jpg" alt="이브닝글로우" />
+                      <img :src="$store.state.productView.pImage" alt="이브닝글로우" />
                     </div>
                     <div class="swiper-slide">
-                      <img src="/assets/img/view/item1/img_item_02.jpg" alt="이브닝글로우" />
+                      <img src="./assets/img/view/item1/img_item_02.jpg" alt="이브닝글로우" />
                     </div>
                     <div class="swiper-slide">
-                      <img src="/assets/img/view/item1/img_item_03.jpg" alt="이브닝글로우" />
+                      <img src="./assets/img/view/item1/img_item_03.jpg" alt="이브닝글로우" />
                     </div>
                     <div class="swiper-slide">
-                      <img src="/assets/img/view/item1/img_item_04.jpg" alt="이브닝글로우" />
+                      <img src="./assets/img/view/item1/img_item_04.jpg" alt="이브닝글로우" />
                     </div>
                   </div>
                   <div class="swiper-pagination"></div>
@@ -103,7 +95,7 @@ export const View = {
                         <a href="#" class="link-btn round-btn">50mL</a>
                       </div>
                       <div class="btn-wrap">
-                        <button type="button" class="add-btn" @click="addToCart">Add To Cart</button>
+                        <button type="button" class="add-btn">Add To Cart</button>
                       </div>
                     </div>
                     <!-- more-option e -->
@@ -190,7 +182,7 @@ export const View = {
                               </button>
                               <div class="shopping-box-wrap">
                                 <h2>유료 쇼핑백 서비스</h2>
-                                <img src="/assets/img/view/shoppingBag_v1.jpg" alt="쇼핑백">
+                                <img src="./assets/img/view/shoppingBag_v1.jpg" alt="쇼핑백">
                                 <strong>쇼핑백 S사이즈를 추천드립니다.</strong>
                                 <p>선물포장 패키지가 제공되는 품목 혹은 여러개의 제품을 함께 구매하실 경우 1:1 문의하기를 통해 적합한 사이즈를 추천 받으실 수 있습니다.</p>
                                 <section class="size-table">
@@ -240,62 +232,128 @@ export const View = {
         </div>
       </div>  
     `,
-    data(){
-        return{
-            productDetail: productDetail,
-        }
-    },
-    methods: {
-      addToCart() {
-        const product = {
-          id: this.$store.state.productView.pId, // 제품 ID
-          name: this.$store.state.productView.pTitle, // 제품명
-          price: parseFloat(this.$store.state.productView.pPrice.replace(/[^\d.-]/g, "")), // 가격
-          image: this.$store.state.productView.pImage, // 이미지
-          quantity: 1 // 기본 수량 1
-        };
-    
-        // localStorage에서 기존 장바구니 데이터 불러오기
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    
-        // 동일한 제품이 있는지 확인
-        let existingProduct = cart.find((item) => item.id === product.id);
-        if (existingProduct) {
-          existingProduct.quantity += 1; // 이미 있으면 수량 증가
-        } else {
-          cart.push(product); // 없으면 새로 추가
-        }
-    
-        // localStorage에 저장 (기존 데이터를 유지하며 새 데이터만 추가)
-        localStorage.setItem("cart", JSON.stringify(cart));
-    
-        // Vuex Store에 장바구니 업데이트
-        this.$store.commit('updateCart', cart);
-    
-        // 장바구니 상태 업데이트 (Vue 컴포넌트에서 cartItems를 반영하고 싶다면)
-        this.cartItems = cart; // 이 부분이 필요할 수 있습니다. (옵션)
-    
-        alert("장바구니에 추가되었습니다!");
-      }
-    },
-    mounted(){
-      $('head').append(`
-        <link rel="stylesheet" type="text/css" href="/assets/css/product-view.css" />
-       `);
-      $('head').append(`
-        <script type="module" src="/assets/js/product_view.js"></script>
-       `);
-    },
-    computed: {
-      currentCategory() {
-        return this.$store.state.currentCategory;  // currentCategory 값
-      },
-      currentSubCategory() {
-        return this.$store.state.currentSubCategory;  // currentSubCategory 값
-      }
-    },
-    created(){
-      this.$store.commit('setPath', this.$route);
-    },
+  data() {
+    return {
+      productDetail: productDetail,
+    };
+  },
+  methods: {},
+  mounted() {
+    // $('#set-js').attr('src','./assets/js/view.js');
 
-}
+    // 제품디테일페이지 - product_view.js
+
+    $("a.item").click(function (e) {
+      return false;
+    });
+
+    // 개선해야할부분 01.15
+    // 광휠 스크롤막기
+    // swiper s /////
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 5,
+      spaceBetween: 3,
+      freeMode: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+    var swiper = new Swiper(".dragSwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+    // swiper e /////
+
+    // // auto scroll s /////
+    // const $img = $(".product-detail-img>img");
+    // const IMG_HEIGHT = $img.height();
+    // let imgNum = 0;
+    // let stsWheel = false;
+
+    // // console.log($img, IMG_HEIGHT);
+
+    // // aoto scroll e /////
+    // $(window).on("wheel", wheelFn);
+
+    // // wheelFn s ////
+    // function wheelFn(e) {
+    //   // (4-1) 기본기능막기 ///////
+    //   // e.preventDefault();
+
+    //   // (4-2) 광휠막기 ///////
+    //   if (stsWheel) return;
+    //   stsWheel = true; // 잠금!
+    //   setTimeout(() => (stsWheel = false), 700); // 해제!
+
+    //   if ($(window).width() > 1024) {
+    //     // 마우스 휠 방향 (-면 위 스크롤, + 아래스크롤)
+    //     let delta = e.originalEvent.deltaY;
+    //     // console.log(delta);
+
+        // if (delta < 0) {
+        //   imgNum--;
+        //   $(".sub-top").slideUp(400);
+        // } else {
+        //   imgNum++;
+        //   $(".sub-top").slideDown(400);
+        // }
+        // console.log(imgNum);
+
+        // if (imgNum < 0) imgNum = 0;
+        // else if (imgNum > $img.length) {
+        //   imgNum = $img.length;
+        // }
+
+        // console.log("이미지번호:", imgNum);
+        // if (imgNum < $img.length) window.scrollTo(0, $img[imgNum].offsetTop);
+        // else if (imgNum + 1 > $img.length) window.scrollTo(0, $(".footer").offset().top);
+
+    //     bulletFn();
+    //   }
+    // } ///wheelFn/////
+
+    // // bulletFn s /////
+    // const $bullet = $(".bullet");
+
+    // function bulletFn() {
+    //   $bullet.each((idx, el) => {
+    //     if (idx == imgNum) $(el).addClass("on");
+    //     else $(el).removeClass("on");
+    //   });
+    // }
+    // // bulletFn e /////
+
+    // css 변경  s///
+
+    $(".desc button").click((e) => {
+      $(".detail-box span").toggleClass("on");
+      $(".desc button").toggleClass("on");
+      $();
+    });
+
+    $(".accordion .accordion-btn").each((i, e) => {
+      $(e).click(() => {
+        $(".accordion-cont").eq(i).toggleClass("on");
+        $(e).toggleClass("on");
+        $(".accordion-cont button").click(() => {
+          $(".accordion-cont").eq(i).removeClass("on");
+          $(e).removeClass("on");
+        });
+      });
+    });
+    // css 변경  e///
+  },
+  computed: {
+    currentCategory() {
+      return this.$store.state.currentCategory; // currentCategory 값
+    },
+    currentSubCategory() {
+      return this.$store.state.currentSubCategory; // currentSubCategory 값
+    },
+  },
+  created() {
+    this.$store.commit("setPath", this.$route);
+  },
+};

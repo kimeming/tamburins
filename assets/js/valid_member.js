@@ -1,6 +1,6 @@
 // 회원가입 유효성검사 및 회원가입처리 JS - valid_member.js
 
-export default function valid_member() {
+export default function valid_member(cbFn) { // cbFn - 뷰JS의 콜백함수 받기
   //   console.log("유효성검사! 나야나~!!!", $("#mid"));
 
   /********************************************** 
@@ -109,14 +109,14 @@ export default function valid_member() {
             else {
               // 아이디 입력가능!!!
               // 메시지 띄우기
-              $(this).siblings(".msg").text("멋진 아이디네요~!").addClass("on");
+              $(this).siblings(".msg").css({color:'green'}).text("멋진 아이디네요~!").addClass("on");
             } /// else ///
           } /////////// if ///////////
 
           // 2. 만약 DB조회하여 같은 아이디가 없다면
           // '멋진 아이디네요~!'와 같은 메시지출력
           // 여기서 우선은 DB조회 못하므로 통과시 메시지로 출력
-          else{
+          else {
             // 메시지 띄우기
             $(this).siblings(".msg").text("멋진 아이디네요~!").addClass("on");
             // -> 비동기 통신 Ajax로 서버쪽에 아이디 중복검사필요!
@@ -299,7 +299,7 @@ export default function valid_member() {
 
     // 이메일 정규식 검사에 따른 메시지 보이기
     if (vReg(comp, "eml")) {
-      eml1.siblings(".msg").text("적합한 이메일 형식입니다!").addClass("on");
+      eml1.siblings(".msg").css({color:'green'}).text("적합한 이메일 형식입니다!").addClass("on");
     } //////// if : 통과시 //////////
     else {
       eml1
@@ -355,7 +355,6 @@ export default function valid_member() {
     ->>> trigger(이벤트명)
 
   *********************************************/
-
   // 검사용 변수
   let pass = true;
 
@@ -439,7 +438,14 @@ export default function valid_member() {
       // 민감한 입력 데이터 페이지가 다시 돌아와서
       // 보이면 안되기 때문에 히스토리를 지우는
       // replace()로 이동한다!
-      location.replace("login.html");
+      // location.replace("login.html");
+      // SPA구성의 뷰JS에서는 개별페이지로 보내면 안된다!
+      // 그래서 라우터로 이동해야함!
+      // 그러나 여기서는 라우터 이동 불가! 왜?
+      // 뷰JS의 기능을 사용할 수 없으니까!
+      // 그래서 뷰JS에서 함수를 보내주고 그것을 여기서 호출함!
+      cbFn();
+
     } //////// if : 통과시 ///////////
     else {
       ///// 불통과시 //////

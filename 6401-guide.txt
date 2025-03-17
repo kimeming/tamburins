@@ -1,0 +1,138 @@
+작업 가이드
+---------------------------------------------------------------------------------
+업데이트 내역
+
+최초 생성: 2025. 01. 06
+1차 수정: 2025. 01. 11 - 서브페이지 작업 가이드 추가
+2차 수정 2025. 01.14 - 서브페이지 작업 가이드 내용 추가
+3차 수정 2025. 01.18 - 작업 가이드 깃허브 업로드
+---------------------------------------------------------------------------------
+
+
+[1] 작업 환경 세팅 및 네이밍 가이드
+
+### 이미지 이름 규칙
+
+img 폴더 안에 각자 담당하는 페이지 폴더 생성 후 필요한 이미지 저장
+ex) assets > img > main 
+
+이미지 네이밍
+
+1. 배경 이미지: bg-이미지이름  
+2. 일반 이미지: img-이미지이름, 넘버링이 필요한 경우 이미지 이름 뒤에 작성
+3. 아이콘: icon-이미지이름
+
+다른 사람들도 같은 이미지를 사용할 수 있기 때문에 이미지 저장하는 방식을 통일하면 좋을 것 같아요!
+
+ex) icon-login.svg, img-perfume01.jpg
+
+### 작업물 commit
+
+summary 작성할 때 간단하게 어떤 작업 중이었는지 표시해서 커밋해주세용
+
+ex) 상품 리스트 css 작업중, 로그인 폼 완료 등
+
+### CSS, JS 등 작업 시
+
+1. 본인이 맡은 페이지 이름으로 css, js 파일 생성   
+    → 나중에 sub.css에 하나로 합치거나 따로 쓰거나 할게요!
+ex) product-list.css, login.php
+
+혹시 다른 분이 맡은 파일에 작업할 일이 있는 경우 꼭!!! 말하고 작업해 주세요 
+같은 파일을 동시에 작업하면 충돌 발생으로 오류가 생길 수 있습니다………….. ㅠㅠ
+
+
+[2] 서브페이지 작업 가이드
+
+필수 연결 CSS / JS 예시
+
+<!-- css s -->
+<link rel="stylesheet" href="./css/swiper-bundle.min.css">
+<link rel="stylesheet" href="./css/common.css">
+<link rel="stylesheet" href="./css/layout.css">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/각자맡은페이지.css">
+<!-- css e -->
+<!-- JS s -->
+<script src="./js/jquery-3.7.1.min.js"></script>
+<script src="./js/swiper-bundle.min.js"></script>
+<script src="./js/layout.js"></script>
+<script src="./js/각자맡은페이지.js"></script>
+<!-- JS e -->
+    
+소스 연결 예시
+	css, js는 나중에 선언된 게 우선순위가 높기 때문에
+
+	    1. 플러그인 / vue 등
+	    2. 공통 css, js
+	    3. 개별 css, js
+	    
+	순서로 연결해 주시면 됩니다~
+
+
+### HTML
+
+1. `sub-layout.html` 복제 후 본인 담당 페이지 영문 이름으로 파일 이름 수정
+2. `.content` 안에서 자유롭게 페이지 코딩
+
+sub-top이 없는 페이지 같은 경우 (ex. faq, 고객서비스 등)에는 **sub-layout-type2** 참고해서 레이아웃 작업
+
+1. `sub-layout-type2.html` 복제 후 본인 담당 페이지 영문 이름으로 파일 이름 수정
+2. `.inner-cont` 안에서 자유롭게 페이지 코딩
+
+### CSS
+
+1. common.css - 메인, 서브페이지 양쪽에서 공통으로 사용할 css
+    
+    추가해야 할 것 같은 css가 있으면 미리 말씀해 주세요
+    
+    ex) css 변수 및 공통적으로 사용하는 클래스 .bold, ..pt20 (padding-top: 20px)
+    
+2. base.css - 서브페이지 공통 css
+    
+    서브페이지에서 공통으로 사용할 css는 base.css에 작업합니당
+    
+    해당 파일에 작업 추가하실 분은 작업 겹치지 않게 꼭 모두에게 톡으로 말씀하시고 추가해 주세요
+    
+    ex) 버튼, input 등
+    
+3. swiper.bundle.min.css - swiper 플러그인 전용 css
+
+4. layout.css - 페이지 레이아웃 관련 css
+    
+    header, footer 등 공통으로 적용되는 레이아웃 관련 css입니다
+    
+5. 각자 담당하는 페이지.css
+
+### JS
+
+1. common.js - 메인, 서브페이지 양쪽에서 공통으로 사용할 js
+
+2. base.js - 서브페이지 공통 js 
+    
+    ex) 페이지 탭
+    
+3. swiper.bundle.min.js - swiper 플러그인 js
+    
+    필요하신 분은 본인 js에서 swiper 생성하셔서 사용하시면 됩니다
+    
+4. layout.js - 페이지 레이아웃 관련 js
+
+5. search.js - 검색 기능 js
+    
+6. 각자 담당하는 페이지 js
+    
+- JS가 필요한 페이지에만 생성해 주세요
+    
+
+### DATA
+
+페이지 관련된 데이터를 넣어 주시면 됩니다
+
+ex) 상품 상세 정보, 이미지 정보, gnb 메뉴 정보 등
+
+이외에 서브 페이지 작업 관련해서 궁금하신 점 있으시면 김혜민한테 개인적으로 질문 주세요.
+
+[3] 기타
+
+- 공통으로 잡은 레이아웃 css나 js 같은 경우에는 최대한 건드리지 말아 주시고 필요한 경우 작업자에게 물어보고 수정 요청해 주세요!

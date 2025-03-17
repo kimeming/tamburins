@@ -25,6 +25,12 @@ $(() => {
     }
   });
 
+  $(".cart-btn, .account-btn").click(() => {
+    if($gnbWrap.hasClass('open')){
+      gnbClose();
+    }
+  });
+
   // gnb
   $gnbA.on('click', function (e) {
       let $currentDep2 = $(this).siblings('.dep2');
@@ -52,6 +58,7 @@ $(() => {
         $(this).removeClass('on');
     }
   });
+
 
   function gnbClose(){
     $gnbWrap.removeClass('open');

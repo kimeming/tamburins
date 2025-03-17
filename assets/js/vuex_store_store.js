@@ -54,9 +54,6 @@ export default new Vuex.Store({
     setShowSubTop(state, value) {
       state.showSubTop = value;
     },
-    updateCart(state, cart) {
-      state.cart = cart; // 카트 상태 업데이트
-    }
   },
 
   // (3) 비동기처리 메서드구역 : actions

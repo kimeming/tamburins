@@ -16,9 +16,9 @@
 .link-btn {display: inline-flex; justify-content: space-between; align-items: center; width: 100%; max-width: 300px; padding: 19px 25px; transition: background-color .3s; border: 1px solid #000;}
 .link-btn:hover, .link-btn:focus {background-color: #000; color: #fff;}
 .link-btn .icon {width: 20px; height: 20px; display: inline-block;}
-.icon.star {background: url('/assets/img/main/icon_star_b.svg') no-repeat center/100%;}
-.icon.arrow {background: url('/assets/img/main/icon_arrow.svg') no-repeat center/30px; transform: rotate(90deg);}
-.link-btn:hover .icon.arrow, .link-btn:focus .icon.arrow {background-image: url('/assets/img/main/icon_arrow_w.svg');}
+.icon.star {background: url('../img/main/icon_star_b.svg') no-repeat center/100%;}
+.icon.arrow {background: url('../img/main/icon_arrow.svg') no-repeat center/30px; transform: rotate(90deg);}
+.link-btn:hover .icon.arrow, .link-btn:focus .icon.arrow {background-image: url('../img/main/icon_arrow_w.svg');}
 @media screen and (min-width: 768px) {
     .section .inner {padding: 100px 20px;}
     .section-tit {font-size: 1.5em;}
@@ -51,7 +51,7 @@
 }
 
 /* section - new */
-.new-product-list>li {min-height: 833px; background-image: url('/assets/img/main/bg-new-temp.png'); background-position: top; background-size: cover; background-repeat: no-repeat;}
+.new-product-list>li {min-height: 833px; background-image: url('../img/main/bg-new-temp.png'); background-position: top; background-size: cover; background-repeat: no-repeat;}
 .new-product-list .intro-box {max-width: 800px;}
 .new-slide .section-tit {font-size: 56px;}
 .new-slide .intro-box p {margin-top: 1rem;}
@@ -60,36 +60,36 @@
 .new-slide .swiper-button-next, .new-slide .swiper-button-prev {color: var(--point-color);}
 
 @media screen and (min-width: 768px) {
-    .new-product-list>li {background-image: url('/assets/img/main/pc_main_banner.png');}
+    .new-product-list>li {background-image: url('../img/main/pc_main_banner.png');}
     .new-product-wrap {width: 50%;}
     .new-product-wrap .intro-box {font-size: 1.2rem;}
 }
 
 /* 신상품 섹션 배경 이미지 */
-.new-product-list .item1 {background-image: url('/assets/img/main/mb_main_banner1.png');}
-.new-product-list .item1 .icon.star {background-image: url('/assets/img/main/icon_star.svg');}
+.new-product-list .item1 {background-image: url('../img/main/mb_main_banner1.PNG');}
+.new-product-list .item1 .icon.star {background-image: url('../img/main/icon_star.svg');}
 .new-product-list .item1 .link-btn:hover {background-color: rgba(255,255,255,0.4); color: #fff;}
-.new-product-list .item2 {background-image: url('/assets/img/main/mb_main_banner2.png');}
-.new-product-list .item3 {background-image: url('/assets/img/main/mb_main_banner3.png');}
-.new-product-list .item4 {background-image: url('/assets/img/main/mb_main_banner4.png');}
-.new-product-list .item5 {background-image: url('/assets/img/main/mb_main_banner5.png');}
-.new-product-list .item6 {background-image: url('/assets/img/main/mb_main_banner6.png');}
-.new-product-list .item7 {background-image: url('/assets/img/main/mb_main_banner7.png');}
+.new-product-list .item2 {background-image: url('../img/main/mb_main_banner2.png');}
+.new-product-list .item3 {background-image: url('../img/main/mb_main_banner3.png');}
+.new-product-list .item4 {background-image: url('../img/main/mb_main_banner4.png');}
+.new-product-list .item5 {background-image: url('../img/main/mb_main_banner5.png');}
+.new-product-list .item6 {background-image: url('../img/main/mb_main_banner6.png');}
+.new-product-list .item7 {background-image: url('../img/main/mb_main_banner7.png');}
 @media screen and (min-width: 768px) {
-    .new-product-list .item1 {background-image: url('/assets/img/main/pc_main_banner1.png');}
-    .new-product-list .item2 {background-image: url('/assets/img/main/pc_main_banner2.png');}
-    .new-product-list .item3 {background-image: url('/assets/img/main/pc_main_banner3.png');}
-    .new-product-list .item4 {background-image: url('/assets/img/main/pc_main_banner4.png');}
-    .new-product-list .item5 {background-image: url('/assets/img/main/pc_main_banner5.png');}
-    .new-product-list .item6 {background-image: url('/assets/img/main/pc_main_banner6.png');}
-    .new-product-list .item7 {background-image: url('/assets/img/main/pc_main_banner7.png');}
+    .new-product-list .item1 {background-image: url('../img/main/pc_main_banner1.png');}
+    .new-product-list .item2 {background-image: url('../img/main/pc_main_banner2.png');}
+    .new-product-list .item3 {background-image: url('../img/main/pc_main_banner3.png');}
+    .new-product-list .item4 {background-image: url('../img/main/pc_main_banner4.png');}
+    .new-product-list .item5 {background-image: url('../img/main/pc_main_banner5.png');}
+    .new-product-list .item6 {background-image: url('../img/main/pc_main_banner6.png');}
+    .new-product-list .item7 {background-image: url('../img/main/pc_main_banner7.png');}
 }
 
 /* 신상품 섹션 특정 상품만 color 변경 */
 .new-product-list .item1, .new-product-list .item4, .new-product-list .item5 {color: #fff;}
 .new-product-list .item1 .icon.star,
 .new-product-list .item4 .icon.star,
-.new-product-list .item5 .icon.star {background-image: url('/assets/img/main/icon_star.svg');}
+.new-product-list .item5 .icon.star {background-image: url('../img/main/icon_star.svg');}
 .new-product-list .item1 .link-btn:hover,
 .new-product-list .item4 .link-btn:hover,
 .new-product-list .item5 .link-btn:hover {background-color: rgba(255,255,255,0.4); color: #fff;}
